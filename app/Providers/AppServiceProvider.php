@@ -6,6 +6,7 @@ use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Illuminate\Support\ServiceProvider;
 use Filament\Forms;
 use \App\Filament\FilamentSettings;
+use Illuminate\Support\Facades\Schema;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -29,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
                                         ->disableLabel(),
 
         ]);
+        Schema::defaultStringLength(191);
+
     }
 }
