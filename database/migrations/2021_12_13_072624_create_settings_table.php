@@ -14,7 +14,7 @@ return new class() extends Migration
             $table->string('group')->index();
             $table->string('name');
             $table->boolean('locked');
-            $table->json('payload');
+            $table->text('payload');
 
             $table->timestamps();
         });

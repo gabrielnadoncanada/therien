@@ -11,7 +11,7 @@ class CreatePostRevisionsTable extends Migration
 		Schema::create('post_revisions', function (Blueprint $table) {
 			$table->id();
 			$table->unsignedBigInteger('post_metadata_id');
-			$table->json('content');
+			$table->text('content');
 			$table->timestamps();
 			$table->foreign('post_metadata_id')->references('id')->on('post_metadata')->onDelete('cascade');
 		});
