@@ -1,4 +1,4 @@
-<section class="relative isolate  min-h-100vh flex items-center">
+<section class="relative isolate  min-h-screen flex items-center">
     <div class="absolute h-full w-full " style="
 background: linear-gradient(180deg, #1C211B 0%, rgba(28, 33, 27, 0.30) 100%), url('/images/362203938_717630203706652_3259959972436561142_n 2.jpg'), lightgray 0 0 / 123.676% 123.611% no-repeat;
 background-repeat: no-repeat;
