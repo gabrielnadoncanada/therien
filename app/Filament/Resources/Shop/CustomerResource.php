@@ -130,4 +130,9 @@ class CustomerResource extends Resource
     {
         return ['name', 'email'];
     }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 }

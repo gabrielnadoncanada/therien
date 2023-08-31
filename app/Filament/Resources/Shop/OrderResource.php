@@ -323,4 +323,8 @@ class OrderResource extends Resource
                 ->columnSpan('full'),
         ];
     }
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 }

@@ -39,7 +39,7 @@ class SiteSettings extends Page implements HasForms
     {
         $this->validate();
 
-        dd($this->data);
+
 
         foreach ($this->data as $key => $data) {
             Valuestore::make(

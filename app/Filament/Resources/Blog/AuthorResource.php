@@ -113,4 +113,9 @@ class AuthorResource extends Resource
             'index' => Pages\ManageAuthors::route('/'),
         ];
     }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
 }
