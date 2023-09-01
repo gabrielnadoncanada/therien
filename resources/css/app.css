@@ -10,6 +10,26 @@
     display: flex !important;
 }
 
+#scroll-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#scroll-text {
+    text-align: left;
+    transform: translateX(0);
+    animation: my-animation 45s linear infinite;
+}
+
+@keyframes my-animation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

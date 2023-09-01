@@ -4,8 +4,18 @@
       slidesPerView: 'auto',
       spaceBetween: 20,
     })">
+
+    <style>
+        @media only screen and (min-width: 1600px){
+            #swiper-services {
+                left: calc((50% - 1600px / 2) + 275px + 80px);
+            }
+
+        }
+
+    </style>
     <div class="flex gap-x-[80px] items-end relative max-w-[1600px] mx-auto">
-        <div class="w-[275px] min-w-[275px] flex flex-col gap-y-[60px]">
+        <div class="hidden 2xl:flex w-[275px] min-w-[275px]  flex-col gap-y-[60px]">
             <img width="215" src="{{ asset('/svg/wheelbarrow.svg') }}" alt="">
             <p class="text-white text-[22px] text-normal font-normal leading-normal leading[1.25]">
                 Nous avons plusieurs cordes à notre arc et toujours le service qui conviendra à vos projets
@@ -23,9 +33,9 @@
             </div>
         </div>
     </div>
-    <div class="absolute w-[550px] h-[1355px] bg-gradient-to-l from-[#161915] to-transparent z-[2] right-0 top-0"></div>
-    <div x-ref="container" class="swiper-container  bottom-0 absolute overflow-hidden"
-         style="left: calc((50% - 1600px / 2) + 275px + 80px);">
+    <div class="max-w-[25vw] absolute w-[550px] h-[1355px] bg-gradient-to-l from-[#161915] to-transparent z-[2] right-0 top-0"></div>
+    <div x-ref="container" id="swiper-services" class="swiper-container  bottom-0 absolute overflow-hidden"
+         style="">
 
 
         <div

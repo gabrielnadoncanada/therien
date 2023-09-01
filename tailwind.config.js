@@ -11,6 +11,14 @@ export default {
     ],
     plugins: [forms],
     theme: {
+        screens: {
+            xs: "490px",
+            sm: "640px",
+            md: "782px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1600px",
+        },
         fontSize: {
             xs: ['0.75rem', { lineHeight: '1rem' }],
             sm: ['0.875rem', { lineHeight: '1.5rem' }],

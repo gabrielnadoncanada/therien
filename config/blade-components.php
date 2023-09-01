@@ -17,13 +17,12 @@ return [
                 'pink'    => 'inline-flex items-center px-2.5 py-0.5 rounded-full font-medium bg-pink-100 text-pink-800',
             ],
         ],
-
         'button' => [
             'class'  => Components\Button::class,
             'themes' => [
                 'default' => 'leading-6	rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'light'   => 'leading-6 rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large'   => 'leading-6 rounded-[50px] bg-primary border border-primary px-[50px] py-[30px] text-[36px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] 2xl:text-[2vw]  leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'large-dark'   => 'rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] text-[40px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'ghost'   => '',
                 'outline' => [
@@ -36,14 +35,12 @@ return [
                 ],
             ],
         ],
-
         'nav' => [
             'class'  => Components\Nav::class,
             'themes' => [
                 'default' => '',
             ],
         ],
-
         'nav-link'  => [
             'class'  => Components\NavLink::class,
             'themes' => [
@@ -60,7 +57,6 @@ return [
                 ],
             ],
         ],
-
         'form' => [
             'class' => Components\Form::class,
 
@@ -153,6 +149,14 @@ return [
                 'themes' => [
                     'default' => 'mt-2 block text-sm text-gray-600',
                 ],
+            ],
+        ],
+        'text' => [
+            'class'  => Components\Text::class,
+            'themes' => [
+                'default' => 'text-white text-xl leading-[1.3] lg:text-[1.45vw]',
+                'h1' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] 2xl:text-[max(96px,5vw)] leading-[1]  font-display',
+                'h6' => 'text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[max(22px,1.45vw)] text-white leading-[1.3] ',
             ],
         ],
     ],

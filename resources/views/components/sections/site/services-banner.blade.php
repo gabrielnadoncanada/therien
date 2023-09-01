@@ -1,12 +1,19 @@
 <section
-        class="mt-[144px] bg-primary p-5 flex flex-row gap-10 items-center justify-start max-w-none relative overflow-hidden">
-    @foreach($services as $index => $service)
-        <div class="whitespace-nowrap text-foreground text-left text-[96px] relative">
-            {{$service['title']}}
+        class="container mt-[144px] bg-primary max-w-none relative overflow-hidden">
+    <div class="flex" id="scroll-container">
+        <div id="scroll-text"
+             class="flex pr-[2.5rem] flex-row gap-10 items-center justify-start inline-block  text-[5vw] whitespace-nowrap text-foreground text-left relative">
+            @foreach($services as $index => $service)
+                {{$service['title']}}
+                <span class="bg-foreground rounded-[50%] shrink-0 w-[15px] h-[15px] relative"></span>
+            @endforeach
         </div>
-
-        @if(!$loop->last)
-            <div class="bg-foreground rounded-[50%] shrink-0 w-[15px] h-[15px] relative"></div>
-        @endif
-    @endforeach
+        <div id="scroll-text"
+             class="flex pr-[2.5rem] flex-row gap-10 items-center justify-start inline-block  text-[5vw] whitespace-nowrap text-foreground text-left relative">
+            @foreach($services as $index => $service)
+                {{$service['title']}}
+                <span class="bg-foreground rounded-[50%] shrink-0 w-[15px] h-[15px] relative"></span>
+            @endforeach
+        </div>
+    </div>
 </section>

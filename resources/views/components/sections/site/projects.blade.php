@@ -33,8 +33,8 @@
 @endphp
 
 <section {{ $attributes }}>
-    <div class="mx-auto max-w-[1500px] md:px-6">
-        <div class="flex  gap-x-[174px] gap-y-16 sm:gap-y-20  lg:items-start">
+    <div class="mx-auto max-w-[1500px] px-6">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-[50px] xl:gap-[174px]">
             <div class="flex-1">
                 <div class="mx-auto  lg:mx-0  flex flex-col gap-y-[61px]">
                     <h2 class="text-primary font-display text-[96px] tracking-tighter leading-[1]">Nous n’avons qu’un
@@ -58,8 +58,8 @@
                     <x-button theme="large" class="mr-auto">Ca m’intéresse</x-button>
                 </div>
             </div>
-            <div class="">
-                <div class="relative  sm:mx-auto sm:max-w-2xl sm:rounded-3xl  sm:pr-0 lg:mx-0 ">
+            <div class="flex-1 hidden xl:block">
+                <div class="relative  sm:mx-auto  sm:rounded-3xl  sm:pr-0 lg:mx-0 ">
                     <div x-data="{ swiper: null }" x-init="swiper = new Swiper($refs.container, {
  spaceBetween: 30,
 	pagination: {
@@ -75,7 +75,7 @@
                                 @foreach ($projects as $index => $project)
 									<div class="swiper-slide">
 											<img src="{{ asset($project['before_url']) }}" alt="Product screenshot"
-												 width="2432" height="1442"
+
 												 class="  aspect-[700/880] object-cover rounded-[50px] ">
 									</div>
 
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-center -mt-8">
+        <div class=" hidden xl:flex justify-center -mt-8">
             <img src="{{ asset('images/blocks.svg') }}" alt="" width="300">
         </div>
 

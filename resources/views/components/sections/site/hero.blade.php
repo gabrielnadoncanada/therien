@@ -5,7 +5,6 @@ background-repeat: no-repeat;
 background-position: center bottom;
 background-size: cover;
 background-blend-mode: hard-light, normal;"></div>
-
     <a href="" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[58px]">
         <svg width="154" height="156" viewBox="0 0 154 156" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.10749 80.0537C21.9845 80.0537 41.0473 87.9498 55.1025 102.005C69.1576 116.06 77.0537 135.123 77.0537 155C77.0537 135.123 84.9499 116.06 99.005 102.005C113.06 87.9498 132.123 80.0537 152 80.0537"
@@ -13,17 +12,15 @@ background-blend-mode: hard-light, normal;"></div>
             <path d="M77 154L77 116.064L77 2" stroke="#ABE85E" stroke-width="4" stroke-linecap="round"/>
         </svg>
     </a>
+    <div class="mx-auto py-32 sm:py-48 lg:pb-40 lg:pt-44 relative">
+        <div class="text-center px-6">
+            <img class="mb-6 md:mb-[20px] mx-auto 2xl:w-[max(275px,11vw)]" src="{{ asset('images/logo-therien.svg') }}" alt="" width="275">
+            <x-text as="h1" theme="h1" class="text-white">Transformez vos rêves <br>
+                en espaces extraordinaires.</x-text>
+            <x-text class="mt-[1em] mb-[2em]" theme="h6">Nous sculptons des espaces uniques qui allient <br>
+                créativité, expertise et beauté naturelle.</x-text>
 
-
-
-    <div class="mx-auto max-w-[1150px] py-32 sm:py-48 lg:pb-40 lg:pt-44 relative">
-        <div class="text-center">
-            <img class="mb-[20px] mx-auto" src="{{ asset('images/logo-therien.svg') }}" alt="" width="275">
-            <h1 class="text-[96px] leading-[1]  text-white font-display">Transformez vos rêves <br>
-                en espaces extraordinaires.</h1>
-            <p class="mt-4 leading-[1.3] text-white text-[24px] ">Nous sculptons des espaces uniques qui allient <br>
-                créativité, expertise et beauté naturelle.</p>
-            <div class="mt-14 flex items-center justify-center gap-x-6">
+            <div class=" flex items-center justify-center gap-x-6">
                 <x-button theme="large" class="leading-[1.1]">Faire un devis</x-button>
             </div>
         </div>
