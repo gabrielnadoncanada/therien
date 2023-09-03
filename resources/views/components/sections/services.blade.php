@@ -38,7 +38,7 @@
     </div>
 
     <div id="swiper-services" class="bottom-0 absolute overflow-hidden">
-        <x-slider id="services" desktop="auto" navigation="false" pagination="false" prevEl=".slider-prev" nextEl=".slider-next" width="393">
+        <x-slider id="servicers" desktop="auto" navigation="false" pagination="false" prevEl=".slider-prev" nextEl=".slider-next" width="393">
             @foreach ($services as $index => $service)
                 <x-slide class="bg-primary  min-h-[492px] max-w-[393px] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
                     <div class="">

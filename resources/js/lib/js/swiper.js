@@ -1,10 +1,12 @@
 // logo slider js
-
-const Sliders = document.querySelectorAll(
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
+let Sliders = document.querySelectorAll(
     '.slider'
 );
 
-
+console.log(Sliders);
 [...Sliders].forEach((singleSlide) => {
     const swiperSliderDiv = singleSlide.querySelector(
         '.slider-container'

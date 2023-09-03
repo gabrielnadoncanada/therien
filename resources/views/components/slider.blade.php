@@ -46,7 +46,7 @@
          data-pagination="{{ $pagination  }}"
          data-navigation="{{ $navigation }}"
          data-width="{{ $width }}"
-         id="{{ $id}}">
+         id="{{ $id }}">
         <div class="swiper-wrapper">
             {{ $slot }}
         </div>
