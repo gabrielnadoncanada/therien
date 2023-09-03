@@ -22,7 +22,7 @@ return [
             'themes' => [
                 'default' => 'leading-6	rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'light'   => 'leading-6 rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] 2xl:text-[2vw]  leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px]   leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'large-dark'   => 'rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] text-[40px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'ghost'   => '',
                 'outline' => [
@@ -38,14 +38,14 @@ return [
         'nav' => [
             'class'  => Components\Nav::class,
             'themes' => [
-                'default' => '',
+                'default' => 'nav',
             ],
         ],
         'nav-link'  => [
             'class'  => Components\NavLink::class,
             'themes' => [
-                'default' => 'min-w-[64px] min-h-[64px] p-4 relative rounded-md text-white hover:bg-white hover:text-primary',
-                'active'  => 'min-w-[64px] min-h-[64px] p-4 bg-white relative rounded-md text-primary',
+                'default' => 'text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[20px] relative rounded-md text-white hover:text-primary transition ease-in-out duration-150',
+                'active'  => 'text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[20px] relative rounded-md text-primary pointer-events-none ',
             ],
         ],
         'menu-item' => [
@@ -154,11 +154,11 @@ return [
         'text' => [
             'class'  => Components\Text::class,
             'themes' => [
-                'default' => 'text-white text-xl leading-[1.3] lg:text-[1.45vw]',
-                'h1' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] 2xl:text-[max(96px,5vw)] leading-[1]  font-display',
-                'h6' => 'text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[max(22px,1.45vw)] text-white leading-[1.3] ',
+                'default' => 'text-foreground text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
+                'invert' => 'text-white text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
+                'h1' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] leading-[1]  font-display',
+                'h6' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-white leading-[1.3] ',
             ],
         ],
     ],
-
 ];

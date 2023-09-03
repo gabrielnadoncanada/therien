@@ -8,17 +8,20 @@ use Illuminate\View\Component;
 class NavLink extends Component
 {
 	use Themeable;
-	public $route;
+	public mixed $route;
+	public $link;
 
-	public function __construct($route = '', $theme = 'default' )
+	public function __construct($route = '',$link = '', $theme = 'default' )
 	{
 		$this->route = $route;
-		$this->theme = $this->isActive() ? 'active' : $theme;
+		$this->link = $link;
 
+
+		$this->theme = $this->isActive() ? 'active' : $theme;
 	}
 
-	public function isActive()
-	{
+	public function isActive(): bool
+    {
 		return request()->route()->getName() === $this->route;
 	}
 
