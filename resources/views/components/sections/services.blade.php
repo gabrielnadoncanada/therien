@@ -1,6 +1,6 @@
 <section {{ $attributes }}>
 
-    <div class="absolute w-[1062px] h-[1062px] -translate-x-1/2 " style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;"></div>
+    <div class="pointer-events-none absolute w-[1062px] h-[1062px] -translate-x-1/2 " style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;"></div>
 
     <style>
         @media only screen and (min-width: 1500px){
@@ -21,11 +21,11 @@
         <div class=" flex-1 relative">
             <div class="flex mb-[35px] gap-x-[40px] items-center pb-[492px] ">
                 <div class="flex gap-x-[40px] ">
-                    <x-button theme="ghost" class="slider-prev">
+                    <x-button theme="ghost" >
                         <img class="w-[60px] lg:w-[80px]" width="80" src="{{ asset('/svg/before.svg') }}"
                              alt="">
                     </x-button>
-                    <x-button theme="ghost" class="slider-next">
+                    <x-button theme="ghost" >
                         <img class="w-[60px] lg:w-[80px]" width="80" src="{{ asset('/svg/after.svg') }}"
                              alt="">
                     </x-button>
@@ -38,7 +38,7 @@
     </div>
 
     <div id="swiper-services" class="bottom-0 absolute overflow-hidden">
-        <x-slider id="servicers" desktop="auto" navigation="false" pagination="false" prevEl=".slider-prev" nextEl=".slider-next" width="393">
+        <x-slider id="servicers" desktop="auto" navigation="false" width="393">
             @foreach ($services as $index => $service)
                 <x-slide class="bg-primary  min-h-[492px] max-w-[393px] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
                     <div class="">

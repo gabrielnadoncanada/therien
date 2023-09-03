@@ -17,8 +17,8 @@
     'id' => 'membres',
     'pagination' => 'true',
     'navigation' => 'true',
-    'nextEl' => 'false',
-    'prevEl' => 'false',
+    'nextEl' => false,
+    'prevEl' => false,
     'width' => false,
 ])
 

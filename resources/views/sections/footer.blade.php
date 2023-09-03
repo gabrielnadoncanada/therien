@@ -1,4 +1,4 @@
-<footer class="px-6 absolute z-10 w-full">
+<footer class="z-10 w-full">
 
     <div class="mt-[229px] max-w-[1280px] flex-wrap bg-primary rounded-[25px]  px-6 py-[96px] px-[122px] rounded-[500px] mx-auto  flex justify-between gap-y-[32px] gap-x-[140px]">
         <div>

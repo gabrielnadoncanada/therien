@@ -8,7 +8,7 @@
             class="py-8 bg-primary max-w-none relative overflow-hidden"/>
     <div class="relative">
 
-        <div class="max-w-[25vw] absolute w-[550px] h-full bg-gradient-to-l from-[#161915] to-transparent z-[2] right-0 top-0"></div>
+        <div class="pointer-events-none max-w-[25vw] absolute w-[550px] h-full bg-gradient-to-l from-[#161915] to-transparent z-[2] right-0 top-0"></div>
         <x-sections.services
                 id="services"
                 class="pt-20 lg:pt-64 relative"

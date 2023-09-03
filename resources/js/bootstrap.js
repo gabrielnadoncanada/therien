@@ -5,7 +5,6 @@
  */
 
 import axios from 'axios';
-// import Swiper JS
 
 window.axios = axios;
 

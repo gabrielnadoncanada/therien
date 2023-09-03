@@ -6,7 +6,7 @@ let Sliders = document.querySelectorAll(
     '.slider'
 );
 
-console.log(Sliders);
+
 [...Sliders].forEach((singleSlide) => {
     const swiperSliderDiv = singleSlide.querySelector(
         '.slider-container'
@@ -51,7 +51,7 @@ console.log(Sliders);
     const width =  swiperSliderDiv.dataset.width;
 
 
-    console.log(width)
+
 
     // pagination options
     const showPagination = JSON.parse(swiperSliderDiv.dataset.pagination);
@@ -77,14 +77,15 @@ console.log(Sliders);
         : false;
 
 
-    if(nextEl && prevEl) {
-        navigationOptions = {
-            nextEl: nextEl,
-            prevEl: prevEl,
-        }
-    }
+    // if(nextEl && prevEl) {
+    //     navigationOptions = {
+    //         nextEl: nextEl,
+    //         prevEl: prevEl,
+    //     }
+    // }
 
     const direction = swiperSliderDiv.getAttribute('dir')
+
 
     let args = {
         pagination: paginationOptions,
@@ -119,7 +120,7 @@ console.log(Sliders);
 
     width ? args.width = width : null;
 
-    console.log(args)
+
     if(direction === 'vertical') {
         args.direction = 'vertical'
     }
