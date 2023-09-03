@@ -49,7 +49,7 @@ const Sliders = document.querySelectorAll(
     const width =  swiperSliderDiv.dataset.width;
 
 
-
+    console.log(width)
 
     // pagination options
     const showPagination = JSON.parse(swiperSliderDiv.dataset.pagination);
