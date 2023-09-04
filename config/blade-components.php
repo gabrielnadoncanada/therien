@@ -23,7 +23,7 @@ return [
                 'default' => 'leading-6	rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'light'   => 'leading-6 rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'large'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px]   leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large-dark'   => 'rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] text-[40px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large-dark'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'ghost'   => '',
                 'outline' => [
                     'primary' => 'leading-6 rounded-md border border-primary px-6 py-2.5 text-base font-semibold text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
@@ -157,6 +157,7 @@ return [
                 'default' => 'text-foreground text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
                 'invert' => 'text-white text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
                 'h1' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] leading-[1]  font-display',
+                'h2' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[64px] leading-[1]  font-display',
                 'h6' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-white leading-[1.3] ',
             ],
         ],

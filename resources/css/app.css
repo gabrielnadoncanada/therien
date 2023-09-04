@@ -6,7 +6,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
-header .nav > li:not(:last-child) > a::after {
+:root {
+    --primary: #ABE85E;
+    --secondary: #1C211B;
+    --foreground: #161A15;
+    /* --primary-darker: #00264d;
+    --primary-dark: #003266;
+    --primary-light: #AAC9E9;
+    --tertiary: #F6F6F6;
+    --foreground-gray: #221f20;
+    --foreground-light: #222123;
+    --danger: #c02b0a; */
+}
+
+.partner {
+    flex-basis: calc(50% - 20px);
+    flex-grow: 0;
+
+    @media only screen and (min-width: 768px) {
+        flex-basis: calc(33.33% - 20px);
+    }
+
+
+}
+
+header .nav>li:not(:last-child)>a::after {
     content: '';
     @apply bg-primary w-[5px] rounded-[50px] h-[5px] mx-[10px];
 }
@@ -30,6 +54,7 @@ header .nav > li:not(:last-child) > a::after {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-100%);
     }
@@ -52,23 +77,24 @@ header .nav > li:not(:last-child) > a::after {
 
 .swiper-pagination-bullet {
     display: flex !important;
-    @apply border border-primary  items-center justify-center;
+    @apply border border-primary items-center justify-center;
 }
 
 .swiper-pagination-bullet-active {
     @apply relative;
 }
+
 .swiper-pagination-bullet-active::after {
     content: '';
     @apply w-[8px] h-[8px] bg-primary rounded-[50px]
 }
 
-#projects + .swiper-pagination{
+#projects+.swiper-pagination {
     transform: rotate(90deg);
     transform-origin: 95% 50%;
     left: unset !important;
     right: -45px !important;
-    @apply absolute  bottom-0;
+    @apply absolute bottom-0;
 }
 
 .swiper-pagination {

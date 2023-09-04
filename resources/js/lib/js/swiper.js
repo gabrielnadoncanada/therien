@@ -17,8 +17,8 @@ let Sliders = document.querySelectorAll(
 
     // slider options
     const deskItems = swiperSliderDiv.dataset.desktop;
-    const tabItems = parseInt(swiperSliderDiv.dataset.tablet);
-    const phoneItems = parseInt(swiperSliderDiv.dataset.mobile);
+    const tabItems = swiperSliderDiv.dataset.tablet;
+    const phoneItems = swiperSliderDiv.dataset.mobile;
 
     const deskSpace = parseInt(swiperSliderDiv.dataset.deskspace);
     const tabSpace = parseInt(swiperSliderDiv.dataset.tabspace);
@@ -101,17 +101,17 @@ let Sliders = document.querySelectorAll(
         parallax,
         breakpoints: {
             320: {
-                slidesPerView: phoneItems,
+                slidesPerView: 1,
                 spaceBetween: phoneSpace,
             },
 
             601: {
-                slidesPerView: tabItems,
+                slidesPerView: 1,
                 spaceBetween: tabSpace,
             },
 
             992: {
-                slidesPerView: deskItems,
+                slidesPerView: 1,
                 spaceBetween: deskSpace,
             },
         },
@@ -126,4 +126,8 @@ let Sliders = document.querySelectorAll(
     }
 
     const slider = new Swiper(`#${sliderId}`, args);
+
+    window.slider = window.slider || {};
+    window.slider[sliderId] = slider;
+   
 });

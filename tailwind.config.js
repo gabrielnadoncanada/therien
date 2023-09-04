@@ -17,7 +17,7 @@ export default {
             md: "782px",
             lg: "1024px",
             xl: "1280px",
-            "2xl": "1600px",
+            "2xl": "1500px",
         },
         fontSize: {
             xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -35,13 +35,13 @@ export default {
         extend: {
             colors: {
                 // 'base': '#ffffff',
-                'primary': '#ABE85E',
+                'primary': 'var(--primary)',
                 // 'primary-dark': '#003266',
                 // 'primary-darker': '#00264d',
                 // 'primary-light': '#AAC9E9',
-                'secondary': '#1C211B',
+                'secondary': 'var(--secondary)',
                 // 'tertiary': '#F6F6F6',
-                'foreground': '#161A15',
+                'foreground': 'var(--foreground)',
                 // 'foreground-gray': '#221f20',
                 // 'foreground-light': '#222123',
                 // 'danger': "#c02b0a"
