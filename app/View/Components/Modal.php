@@ -10,11 +10,13 @@ class Modal extends Component
 
 	public $id;
 
-	public function __construct($title, $id)
-	{
-		$this->title = $title;
+	public $show;
 
+	public function __construct($id, $show = false)
+	{
+		// $this->title = $title;
 		$this->id = $id;
+        $this->show = $show;
 	}
 
 	public function render()

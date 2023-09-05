@@ -5,11 +5,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+input:-internal-autofill-selected {
+    background-color: transparent !important;
+}
 
 :root {
     --primary: #ABE85E;
     --secondary: #1C211B;
     --foreground: #161A15;
+    --accent: #19669b;
     /* --primary-darker: #00264d;
     --primary-dark: #003266;
     --primary-light: #AAC9E9;
@@ -28,6 +32,15 @@
     }
 
 
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 24px !important;
+    color: var(--primary) !important;
+    opacity: .25 !important;
+    @apply font-display leading-[1];
+    letter-spacing: -0.48px;
 }
 
 header .nav>li:not(:last-child)>a::after {

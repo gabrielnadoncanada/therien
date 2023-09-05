@@ -1,3 +1,3 @@
 <div {{ $attributes->merge(['class' => $theme()]) }}>
-  {{ $slot }}
+    {{ $slot }}
 </div>

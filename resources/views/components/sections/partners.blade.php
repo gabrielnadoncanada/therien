@@ -4,7 +4,7 @@
 
         <div class="relative">
             <x-text as="h2" theme="h1" class="text-primary">
-                Partenaires de <span class="text-foreground z-[1] relative font-bold">choc
+                Partenaires de <span class="leading-[2.5] sm:leading-[1.2] text-foreground z-[1] relative font-bold">choc
                     <svg class="left-1/2 top-1/2 -translate-y-1/2  -translate-x-[45%] z-[-1] absolute"
                         xmlns="http://www.w3.org/2000/svg" width="150%" height="282" viewBox="0 0 313 282"
                         fill="none">

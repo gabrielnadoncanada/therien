@@ -1,16 +1,16 @@
 <footer class="z-10 w-full">
-    <div class="px-6 max-w-7xl  mx-auto">
+    <div class="max-w-7xl  mx-auto">
         <div
-            class=" mt-20 lg:mt-60  flex-wrap bg-primary rounded-[25px]  px-6 py-6 lg:py-[96px] lg:px-[122px] lg:rounded-[500px]  flex justify-between gap-y-[32px] gap-x-[140px]">
+            class=" mt-20 lg:mt-60   flex-col md:flex-row bg-primary   px-[50px] py-[48px] lg:py-[96px] lg:px-[122px] rounded-[50px] lg:rounded-[500px]  flex justify-between gap-y-[32px] gap-x-[140px]">
             <div>
                 <x-text as="h2" theme="h2" class="font-bold  text-foreground mb-2">
-                    Prêt pour l'aventure ?
+                    Prêt pour l'aventure&nbsp; ?
                 </x-text>
                 <x-text class="text-foreground">Vous n'êtes qu'à un clic du l'espace de vos rêves.</x-text>
 
             </div>
             <div class="flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-                <x-button theme="large-dark" class="flex items-center leading-[1] gap-x-[20px]">
+                <x-button theme="large-dark" class="flex items-center leading-[1] gap-x-[20px] whitespace-nowrap">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 24 24"
                         fill="none">
                         <path
@@ -41,5 +41,11 @@
             <p class="text-[16px]  text-primary">@2023 Thérien Inc. - Tous droits réservés</p>
         </div>
     </div>
+
+
+
+    <livewire:forms.contact></livewire:forms.contact>
+s
+
 
 </footer>

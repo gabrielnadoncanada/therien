@@ -40,7 +40,7 @@ export default {
                 // 'primary-darker': '#00264d',
                 // 'primary-light': '#AAC9E9',
                 'secondary': 'var(--secondary)',
-                // 'tertiary': '#F6F6F6',
+                'accent': 'var(--accent)',
                 'foreground': 'var(--foreground)',
                 // 'foreground-gray': '#221f20',
                 // 'foreground-light': '#222123',

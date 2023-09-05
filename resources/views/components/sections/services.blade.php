@@ -21,7 +21,7 @@
         </div>
         <div class=" flex-1 relative">
             <div
-                class="pl-6 lg:pl-0 flex flex-col-reverse md:flex-row mb-8 gap-y-5 gap-x-10 md:items-center md:pb-[492px] ">
+                class="px-6 lg:pl-0 flex flex-col-reverse md:flex-row mb-8 gap-y-5 gap-x-10 md:items-center 2xl:pb-[492px] ">
                 <div class="flex gap-x-5 md:gap-x-10 ">
                     <x-button theme="ghost">
                         <img class="w-[60px] lg:w-[80px]" width="80" src="{{ asset('/svg/before.svg') }}"
@@ -39,21 +39,22 @@
         </div>
     </div>
 
-    <div id="swiper-services" class="pl-6 lg:pl-0 bottom-0 md:absolute overflow-hidden">
+    <div id="swiper-services" class="px-6 lg:pl-0 bottom-0 2xl:absolute overflow-hidden">
         <x-slider id="servicers" desktop="auto" navigation="false" width="393">
             @foreach ($services as $index => $service)
                 <x-slide
-                    class="min-h-[492px] max-w-[393px] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
+                    class="min-h-[492px] max-w-[100%] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
                     <div class="">
-                        <h3 class="leading-[1] font-semibold font-display text-foreground text-[48px]">
+                        <x-text as="h3" theme="h3"
+                            class="leading-[1] font-semibold font-display text-foreground text-[48px]">
                             {{ $service['title'] }}
-                        </h3>
+                        </x-text>
                         <p class="mt-5 text-foreground">
                             {{ $service['content'] }}
                         </p>
                     </div>
                     <div class="relative mt-8 flex items-center gap-x-[10px] flex-wrap gap-y-6">
-                        <x-button theme="light">Faire un devis</x-button>
+                        <x-button theme="light" @click="toggle('contact')">Faire un devis</x-button>
                         <x-button theme="ghost" class="underline text-foreground text-[14px]">ou appelez-nous
                         </x-button>
                     </div>

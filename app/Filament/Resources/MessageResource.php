@@ -24,14 +24,18 @@ class MessageResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\TextInput::make('name')
+            Forms\Components\TextInput::make('firstName')
                 ->disabled()
-                ->label('Sender Name'),
-
+                ->label('First Name'),
+            Forms\Components\TextInput::make('lastName')
+            ->disabled()
+            ->label('Last Name'),
             Forms\Components\TextInput::make('email')
                 ->disabled()
                 ->label('Sender Email'),
-
+            Forms\Components\TextInput::make('tel')
+            ->disabled()
+            ->label('Sender tel'),
             Forms\Components\Textarea::make('message')
                 ->disabled()
                 ->label('Message'),
@@ -41,9 +45,16 @@ class MessageResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                // ... your columns
-            ])
+        ->columns([
+            Tables\Columns\TextColumn::make('firstName')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('lastName')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('email')
+                ->sortable(),
+            Tables\Columns\TextColumn::make('tel')
+                ->searchable(),
+        ])
             ->filters([
                 // ... your filters
             ])

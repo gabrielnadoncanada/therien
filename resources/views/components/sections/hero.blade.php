@@ -25,7 +25,8 @@ background-blend-mode: hard-light, normal;">
                 créativité, expertise et beauté naturelle.</x-text>
 
             <div class=" flex items-center justify-center gap-x-6">
-                <x-button theme="large" class="leading-[1.1]">Faire un devis</x-button>
+                <x-button theme="large" class="leading-[1.1]" @click="toggle('contact')">Faire un
+                    devis</x-button>
             </div>
         </div>
     </div>

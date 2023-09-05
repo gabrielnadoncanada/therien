@@ -21,12 +21,12 @@
         </svg>
     </div>
 
-    <div id="swiper-testimonials" class=" overflow-hidden swiper-container md:absolute bottom-0 ">
+    <div id="swiper-testimonials" class="px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 ">
         <x-slider id="testimonials" desktop="auto" navigation="false" pagination="false" width="500">
             @foreach ($testimonials as $index => $testimonial)
                 <x-slide
-                    class="max-w-[500px] swiper-slide mx-auto   flex gap-x-[32px]   p-[40px] border border-primary rounded-[200px]">
-                    <div class="flex items-center gap-x-6 min-w-[111px]">
+                    class="max-w-[100%] swiper-slide mx-auto  flex gap-x-[32px]  rounded-[50px] px-[50px] py-[40px] lg:px-[40px]  border border-primary lg:rounded-[200px]">
+                    <div class="hidden lg:flex items-center gap-x-6 min-w-[111px]">
                         <img width="111" height="111" class="rounded-full bg-gray-50"
                             src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=1024&amp;h=1024&amp;q=80"
                             alt="">
@@ -42,7 +42,8 @@
                                 </svg>
                             @endfor
                         </div>
-                        <h3 class="text-gray-900 text-primary font-display text-[36px]">{{ $testimonial['title'] }}</h3>
+                        <h3 class="text-gray-900 text-primary font-display text-[36px] leading-1">
+                            {{ $testimonial['title'] }}</h3>
                         <p class="text-white">
                             {{ $testimonial['content'] }}
                         </p>

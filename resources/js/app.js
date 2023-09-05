@@ -1,4 +1,5 @@
 import './bootstrap';
+import './components';
 import './lib/css/swiper-bundle.css';
 
 import './lib/js/swiper';

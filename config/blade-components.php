@@ -63,7 +63,7 @@ return [
             'field' => [
                 'class'  => Components\Form\Field::class,
                 'themes' => [
-                    'default' => 'space-y-2 mb-4',
+                    'default' => 'flex items-center border border-primary rounded-[5px] p-[20px] gap-x-[10px] flex',
                 ],
             ],
 
@@ -71,9 +71,9 @@ return [
                 'class'  => Components\Form\Input::class,
                 'themes' => [
                     'default' => [
-                        'normal'   => 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
-                        'invalid'  => 'block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md',
-                        'disabled' => 'bg-gray-50 shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                        'normal'   => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
+                        'invalid'  => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
+                        'disabled' => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
                     ],
                 ],
             ],
@@ -81,7 +81,7 @@ return [
             'label' => [
                 'class'  => Components\Form\Label::class,
                 'themes' => [
-                    'default' => 'block text-sm font-medium text-primary',
+                    'default' => 'block text-[14px] text-primary',
                 ],
             ],
 
@@ -119,7 +119,7 @@ return [
                 'class'  => Components\Form\Textarea::class,
                 'themes' => [
                     'default' => [
-                        'normal'   => 'max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md',
+                        'normal'   => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
                         'invalid'  => 'max-w-lg shadow-sm block w-full focus:ring-red-500 focus:border-red-500 sm:text-sm border-gray-300 rounded-md',
                         'disabled' => 'bg-gray-50 max-w-lg shadow-sm block w-full focus:ring-gray-500 focus:border-gray-500 sm:text-sm border-gray-300 rounded-md',
                     ],
@@ -158,6 +158,7 @@ return [
                 'invert' => 'text-white text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
                 'h1' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] leading-[1]  font-display',
                 'h2' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[64px] leading-[1]  font-display',
+                'h3' => 'text-[34px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px] leading-[1]  font-display',
                 'h6' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-white leading-[1.3] ',
             ],
         ],
