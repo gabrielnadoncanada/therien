@@ -39,7 +39,7 @@
     </div>
 
     <div id="swiper-services" class="px-6  bottom-0 2xl:absolute overflow-hidden">
-        <x-slider autoplay="true" id="servicers" desktop="auto" navigation="false" width="393">
+        <x-slider id="servicers" desktop="auto" navigation="false" width="393">
             @foreach ($services as $index => $service)
                 <x-slide
                     class="min-h-[492px] max-w-[100%] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">

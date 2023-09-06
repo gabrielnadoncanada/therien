@@ -63,7 +63,7 @@ return [
             'field' => [
                 'class'  => Components\Form\Field::class,
                 'themes' => [
-                    'default' => 'flex gap-x-2 text-white rounded-md px-3 pb-2.5 pt-2.5 shadow-sm ring-1 ring-inset ring-primary focus-within:ring-2 focus-within:ring-accent',
+                    'default' => 'flex-col flex gap-x-2 text-white rounded-md px-3 py-[10px] lg:py-[20px] shadow-sm ring-1 ring-inset ring-primary focus-within:ring-2 focus-within:ring-accent',
                     // 'default' => 'flex items-center border border-primary rounded-[5px] p-[20px] gap-x-[10px] flex',
                 ],
             ],
@@ -72,7 +72,7 @@ return [
                 'class'  => Components\Form\Input::class,
                 'themes' => [
                     'default' => [
-                        'normal'   => 'bg-transparent block w-full rounded-md border-0 py-1.5 pr-10  ring-1 ring-inset ring-primary  focus:ring-2 focus:ring-inset focus:ring-accent text-[24px] sm:leading-6',
+                        'normal'   => 'p-0 bg-transparent block w-full rounded-md border-0 py-0 pr-10   text-[18px] focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                         // 'normal'   => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
                         'invalid'  => 'block w-full rounded-md border-0 py-1.5 pr-10 text-red-900 ring-1 ring-inset ring-red-300 placeholder:text-red-300 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6',
 
@@ -123,7 +123,7 @@ return [
                 'class'  => Components\Form\Textarea::class,
                 'themes' => [
                     'default' => [
-                        'normal' => 'bg-transparent block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-primary  focus:ring-2 focus:ring-inset focus:ring-accent text-[24px] sm:leading-6',
+                        'normal' => 'p-0 bg-transparent block w-full rounded-md border-0 py-0 text-[18px] shadow-sm  focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                         // 'normal'   => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
                         'invalid'  => 'block w-full rounded-md border-0 py-1.5 pr-10 text-red-900 ring-1 ring-inset ring-red-300 placeholder:text-red-300 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6',
                         // 'invalid'  => 'max-w-lg shadow-sm block w-full focus:ring-red-500 focus:border-red-500 sm:text-sm border-gray-300 rounded-md',

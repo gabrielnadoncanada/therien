@@ -12,9 +12,24 @@ class Project extends Model
 		'content',
 		'slug',
         'sort',
-		'image',
+		'before_image',
+		'after_image',
 	];
 
     use HasFactory;
 
+	protected static function booted()
+    {
+        static::updated(function ($project) {
+            Cache::forget('frontpage_projects');
+        });
+
+        static::created(function ($project) {
+            Cache::forget('frontpage_projects');
+        });
+
+        static::deleted(function ($project) {
+            Cache::forget('frontpage_projects');
+        });
+    }
 }

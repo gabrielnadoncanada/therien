@@ -23,8 +23,8 @@
 ])
 
 
-<div class="slider slider-active-pagination relative">
-    <div class="slider-container swiper" data-nextel="{{ $nextEl }}" data-prevel="{{ $prevEl }}"
+<div {{ $attributes->merge(['class' => 'slider slider-active-pagination relative']) }}>
+    <div class="slider-container swiper h-full" data-nextel="{{ $nextEl }}" data-prevel="{{ $prevEl }}"
         data-desktop="{{ $desktop }}" data-tablet="{{ $tablet }}" data-mobile="{{ $mobile }}"
         data-autoplay="{{ $autoplay }}" data-autoplaydelay="{{ $autoplayDelay }}"
         data-autoplaydirection="{{ $autoplayDirection }}" data-speed="{{ $speed }}"

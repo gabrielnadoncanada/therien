@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Repositories\ServiceRepository;
 use App\Repositories\PartnerRepository;
 use App\Repositories\TestimonialRepository;
+use App\Repositories\ProjectRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ServiceRepository::class);
         $this->app->bind(PartnerRepository::class);
         $this->app->bind(TestimonialRepository::class);
+        $this->app->bind(ProjectRepository::class);
     }
 
     /**

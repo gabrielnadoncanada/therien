@@ -1,5 +1,5 @@
 <div x-show="modals['{{ $id }}']"
-    class="h-screen w-screen fixed flex justify-center items-center p-4 top-0 z-[999]" {{ $attributes }}>
+    class="h-full w-screen fixed flex justify-center items-center p-4 top-0 z-[999]" {{ $attributes }}>
     <div x-show="modals['{{ $id }}']" x-transition:enter="ease-out duration-300"
         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
@@ -13,7 +13,7 @@
         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         x-description="Modal panel, show/hide based on modal state."
-        class="relative transform overflow-hidden rounded-lg p-6 xs:p-8 sm:px-20 sm:pt-14 sm:pb-20 bg-foreground sm:px-20 text-left shadow-xl transition-all  max-w-[900px] sm:p-6"
+        class="overflow-y-auto h-full relative transform overflow-hidden rounded-lg p-6 xs:p-8 sm:px-20 sm:pt-14 sm:pb-20 bg-foreground sm:px-20 text-left shadow-xl transition-all  max-w-[900px] sm:p-6"
         @click.away="open = false">
         @if ($title)
             <p class="text-3xl text-primary mb-12">{{ $title }}</p>

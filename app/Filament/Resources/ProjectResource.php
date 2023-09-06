@@ -26,8 +26,10 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(191),
-                Forms\Components\FileUpload::make('image')
+                Forms\Components\FileUpload::make('before_image')
                     ->image(),
+                Forms\Components\FileUpload::make('after_image')
+                ->image(),
             ]);
     }
 
@@ -37,7 +39,7 @@ class ProjectResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image')
+                Tables\Columns\ImageColumn::make('before_image')
             ])
             ->filters([
                 //

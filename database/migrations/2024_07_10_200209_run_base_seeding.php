@@ -135,7 +135,33 @@ return new class extends Migration {
             )
         ));
 
-
+        $projects = \App\Models\Project::insert(array(
+            array(
+                'title' => "1",
+                'before_image' => "project.png",
+                'after_image' => "project2.png",
+            ),
+            array(
+                'title' => "2",
+                'before_image' => "project.png",
+                'after_image' => "project2.png",
+            ),
+            array(
+                'title' => "3",
+                'before_image' => "project.png",
+                'after_image' => "project2.png",
+            ),
+            array(
+                'title' => "4",
+                'before_image' => "project.png",
+                'after_image' => "project2.png",
+            ),
+            array(
+                'title' => "5",
+                'before_image' => "project.png",
+                'after_image' => "project2.png",
+            ),
+        ));
 
 
 //	    \App\Models\Language::insert(
@@ -168,7 +194,10 @@ return new class extends Migration {
 //		    )
 //	    );
 
-
+        Cache::forget('frontpage_services');
+        Cache::forget('frontpage_testimonials');
+        Cache::forget('frontpage_projects');
+        Cache::forget('frontpage_partners');
     }
 
     /**

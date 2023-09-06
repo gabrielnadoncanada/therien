@@ -1,6 +1,6 @@
 <div>
     <x-sections.hero />
-    <x-sections.projects id="a-propos" class="pt-20 lg:pt-44 pb-20 lg:pb-36 relative" />
+    <x-sections.projects :projects="$projects" id="a-propos" class="pt-20 lg:pt-44 pb-20 lg:pb-36 relative" />
     <x-sections.services-banner :services="$services" class="py-8 bg-primary max-w-none relative overflow-hidden" />
     <div class="relative">
 

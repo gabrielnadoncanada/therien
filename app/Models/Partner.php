@@ -16,4 +16,18 @@ class Partner extends Model
 
     use HasFactory;
 
+	protected static function booted()
+    {
+        static::updated(function ($partner) {
+            Cache::forget('frontpage_partners');
+        });
+
+        static::created(function ($partner) {
+            Cache::forget('frontpage_partners');
+        });
+
+        static::deleted(function ($partner) {
+            Cache::forget('frontpage_partners');
+        });
+    }
 }

@@ -17,4 +17,18 @@ class Service extends Model
 
     use HasFactory;
 
+	protected static function booted()
+    {
+        static::updated(function ($service) {
+            Cache::forget('frontpage_services');
+        });
+
+        static::created(function ($service) {
+            Cache::forget('frontpage_services');
+        });
+
+        static::deleted(function ($service) {
+            Cache::forget('frontpage_services');
+        });
+    }
 }

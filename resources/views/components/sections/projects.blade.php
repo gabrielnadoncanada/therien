@@ -1,37 +1,3 @@
-@php
-    $projects = [
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-        [
-            'before_url' => '/images/image 3.png',
-            'after_url' => '/images/image 3.png',
-        ],
-    ];
-    
-@endphp
-
 <section {{ $attributes }}>
     <div class="absolute w-[1062px] h-[1062px] left-1/2 top-0 -translate-x-1/2 -translate-y-[75%] z-[-1]"
         style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);">
@@ -62,19 +28,32 @@
                 </div>
             </div>
             <div class="lg:min-w-[450px] lg:max-w-[750px]">
-                <div class="relative sm:mx-auto  sm:rounded-3xl  sm:pr-0 lg:mx-0 ">
+                <div class="relative sm:mx-auto  sm:rounded-3xl  sm:pr-0 lg:mx-0 h-full">
                     <img class="hidden lg:block absolute top-[-45px] right-[-100px] z-[20]"
                         src="{{ asset('/svg/paint.svg') }}" alt="">
-                    <x-slider id="projects" navigation="false" pagination="true" desktop="1">
+                    <x-slider id="projects" navigation="false" pagination="true" desktop="1" class="h-full">
                         @foreach ($projects as $index => $project)
-                            <x-slide class="pr-[60px]">
-                                <img src="{{ asset($project['before_url']) }}" alt="Product screenshot"
-                                    class="mr-[60px]  aspect-[700/880] object-cover rounded-[50px] ">
+                            <x-slide class="pr-[60px]" x-data="{ showAfter: false }">
 
-                                <div class="z-[-1] rounded-[50px] w-full  h-full absolute left-0 top-[60px] bottom-0 right-0"
-                                    style="background-repeat: no-repeat; background: linear-gradient(180deg, rgba(22, 25, 21, 0.00) 0%, #161915 61.98%),url('{{ asset($project['before_url']) }}');background-size: cover;  ">
+                                <x-button theme="ghost" @click="showAfter = !showAfter"
+                                    x-text="showAfter ? 'Voir l’avant' : 'Voir l’après'"
+                                    class="z-[2] absolute left-[40px] bottom-[40px] px-[20px] py-[10px] rounded-[50px] text-[32px] font-display text-white border border-white font-[400]">
+                                </x-button>
+
+                                <div class="rounded-[50px] w-full  h-full absolute  bottom-0 max-w-[700px] bg-no-repeat	bg-cover	"
+                                    :class="{ 'right-0 z-[-1] top-[60px] hasFilter': showAfter, 'left-0 top-0': !showAfter }"
+                                    style="background: url('{{ asset('/storage/' . $project['before_image']) }}');">
                                 </div>
 
+
+                                <div class="rounded-[50px] w-full  h-full absolute    max-w-[700px] bg-no-repeat	bg-cover	"
+                                    :class="{
+                                        'z-[1] top-0 left-0 ': showAfter,
+                                        'right-0 z-[-1] top-[60px] hasFilter': !
+                                            showAfter
+                                    }"
+                                    style="background: url('{{ asset('/storage/' . $project['after_image']) }}');">
+                                </div>
                             </x-slide>
                         @endforeach
                     </x-slider>
