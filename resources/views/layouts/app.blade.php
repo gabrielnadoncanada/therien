@@ -20,7 +20,7 @@
         }
         this.modals[id] = !this.modals[id];
     }
-}" class="bg-foreground mt-[5900px]">
+}" class="bg-foreground">
     <div class="max-w-[100%] pointer-events-none absolute w-[1062px] h-[1062px] -translate-x-1/2 -translate-y-1/2 z-[-1]"
         style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;">
     </div>
