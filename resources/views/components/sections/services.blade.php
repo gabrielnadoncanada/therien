@@ -1,8 +1,8 @@
 <section {{ $attributes }}>
     <style>
-        @media only screen and (min-width: 1500px) {
+        @media only screen and (min-width: 1548px) {
             #swiper-services {
-                left: calc((50% - 1500px / 2) + 275px + 80px);
+                left: calc((50% - 1548px / 2) + 275px + 80px);
             }
 
         }
@@ -11,7 +11,7 @@
         style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;">
     </div>
 
-    <div class="flex gap-x-[80px] items-end relative max-w-[1500px] mx-auto">
+    <div class="flex gap-x-[80px] items-end relative max-w-[1548px] mx-auto">
         <div class="hidden lg:pl-6 2xl:flex w-[275px] min-w-[275px]  flex-col gap-y-[60px]">
             <img width="215" src="{{ asset('/svg/wheelbarrow.svg') }}" alt="">
             <x-text theme="invert">
@@ -39,7 +39,7 @@
     </div>
 
     <div id="swiper-services" class="px-6  bottom-0 2xl:absolute overflow-hidden">
-        <x-slider id="servicers" desktop="auto" navigation="false" width="393">
+        <x-slider autoplay="true" id="servicers" desktop="auto" navigation="false" width="393">
             @foreach ($services as $index => $service)
                 <x-slide
                     class="min-h-[492px] max-w-[100%] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">

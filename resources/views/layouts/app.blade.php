@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Page Title' }}</title>
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="/css/lib/swiper-bundle.css">
 </head>
 
 <body x-data="{
@@ -26,6 +27,7 @@
     @include('sections.header')
     <main id="main" class="overflow-hidden">{{ $slot }}</main>
     @include('sections.footer')
+    <script src="/js/lib/swiper-bundle.js"></script>
     @vite('resources/js/app.js')
 </body>
 

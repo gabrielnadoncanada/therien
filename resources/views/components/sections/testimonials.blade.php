@@ -1,14 +1,14 @@
 <section {{ $attributes }}>
 
     <style>
-        @media only screen and (min-width: 1500px) {
+        @media only screen and (min-width: 1548px) {
             #swiper-testimonials {
-                left: calc((50% - 1500px / 2) + 60px + 80px);
+                left: calc((50% - 1548px / 2) + 60px + 80px);
             }
 
         }
     </style>
-    <div class="hidden max-w-[1500px]
+    <div class="hidden max-w-[1548px]
  mx-auto 2xl:flex gap-x-[67px]  items-center px-6">
         <svg class="min-w-[60px]" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"
             fill="none">

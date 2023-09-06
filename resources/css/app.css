@@ -106,8 +106,8 @@ header .nav>li:not(:last-child)>a::after {
     transform: rotate(90deg);
     transform-origin: 95% 50%;
     left: unset !important;
-    right: -45px !important;
-    @apply absolute bottom-0;
+
+    @apply absolute bottom-0 right-0;
 }
 
 .swiper-pagination {

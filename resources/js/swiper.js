@@ -1,7 +1,4 @@
 // logo slider js
-import Swiper from 'swiper';
-// import Swiper styles
-import 'swiper/css';
 let Sliders = document.querySelectorAll(
     '.slider'
 );
@@ -46,9 +43,9 @@ let Sliders = document.querySelectorAll(
     const mousewheel = JSON.parse(swiperSliderDiv.dataset.mousewheel);
     const parallax = swiperSliderDiv.dataset.parallax ? JSON.parse(swiperSliderDiv.dataset.parallax) : false;
     const autoHeight = JSON.parse(swiperSliderDiv.dataset.autoheight);
-    const nextEl = swiperSliderDiv.dataset.nextel;
-    const prevEl = swiperSliderDiv.dataset.prevel;
-    const width =  swiperSliderDiv.dataset.width;
+    const nextEl = JSON.parse(swiperSliderDiv.dataset.nextel);
+    const prevEl = JSON.parse(swiperSliderDiv.dataset.prevel);
+    const width = JSON.parse(swiperSliderDiv.dataset.width);
 
 
 
@@ -77,12 +74,12 @@ let Sliders = document.querySelectorAll(
         : false;
 
 
-    // if(nextEl && prevEl) {
-    //     navigationOptions = {
-    //         nextEl: nextEl,
-    //         prevEl: prevEl,
-    //     }
-    // }
+    if (nextEl && prevEl) {
+        navigationOptions = {
+            nextEl: nextEl,
+            prevEl: prevEl,
+        }
+    }
 
     const direction = swiperSliderDiv.getAttribute('dir')
 
@@ -121,7 +118,7 @@ let Sliders = document.querySelectorAll(
     width ? args.width = width : null;
 
 
-    if(direction === 'vertical') {
+    if (direction === 'vertical') {
         args.direction = 'vertical'
     }
 
@@ -129,5 +126,5 @@ let Sliders = document.querySelectorAll(
 
     window.slider = window.slider || {};
     window.slider[sliderId] = slider;
-   
+
 });
