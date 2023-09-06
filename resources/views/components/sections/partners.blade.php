@@ -26,7 +26,8 @@
                 @foreach ($partners as $index => $partner)
                     <div
                         class="partner aspect-[16/9] rounded-[15px] border-solid border-[#ffffff] border-2 p-4 sm:p-10 lg:p-15 flex flex-col gap-2.5 items-center justify-center  relative">
-                        <img class="shrink-0  relative" src="/storage/{{ $partner['image'] }}" alt="" />
+                        <img class="shrink-0  relative" src="/storage/{{ $partner['image'] }}"
+                            alt="{{ $partner['title'] }}" />
                     </div>
                 @endforeach
             </div>

@@ -1,10 +1,10 @@
-<footer class="z-10 w-full">
-    <div class="max-w-7xl  mx-auto">
+<footer class=" w-full relative overflow-hidden">
+    <div class="max-w-7xl  mx-auto px-6">
         <div
-            class=" mt-20 lg:mt-60   flex-col md:flex-row bg-primary   px-[50px] py-[48px] lg:py-[96px] lg:px-[122px] rounded-[50px] lg:rounded-[500px]  flex justify-between gap-y-[32px] gap-x-[140px]">
+            class=" mt-20 lg:mt-60  gap-y-[32px] md:gap-x-[70px] lg:gap-x-[140px] flex-col md:flex-row bg-primary px-[50px] py-[48px] md:py-[96px] md:rounded-[200px] md:px-[75px] lg:px-[122px] rounded-[50px] lg:rounded-[500px] flex justify-between">
             <div>
                 <x-text as="h2" theme="h2" class="font-bold  text-foreground mb-2">
-                    Prêt pour l'aventure&nbsp; ?
+                    Prêt pour l'aventure&nbsp;?
                 </x-text>
                 <x-text class="text-foreground">Vous n'êtes qu'à un clic du l'espace de vos rêves.</x-text>
 
@@ -24,7 +24,7 @@
     </div>
 
 
-    <div class="border-t border-primary mt-20 lg:mt-72 ">
+    <div class="border-t bg-foreground border-primary mt-20 lg:mt-72 z-[2] relative">
         <div class=" mx-auto max-w-7xl px-6 py-[20px] flex items-center gap-6 flex-wrap justify-between lg:px-8">
             <svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 116 30" fill="none">
                 <g clip-path="url(#clip0_91_24)">
@@ -45,7 +45,9 @@
 
 
     <livewire:forms.contact></livewire:forms.contact>
-s
 
 
+    <div class="pointer-events-none absolute w-[1062px] h-[1062px] translate-x-1/2 translate-y-1/2 right-0"
+        style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;">
+    </div>
 </footer>

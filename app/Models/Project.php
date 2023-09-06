@@ -11,7 +11,8 @@ class Project extends Model
 		'title',
 		'content',
 		'slug',
-        'sort'
+        'sort',
+		'image',
 	];
 
     use HasFactory;

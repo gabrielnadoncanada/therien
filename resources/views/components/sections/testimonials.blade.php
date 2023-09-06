@@ -28,8 +28,7 @@
                     class="max-w-[100%] swiper-slide mx-auto  flex gap-x-[32px]  rounded-[50px] px-[50px] py-[40px] lg:px-[40px]  border border-primary lg:rounded-[200px]">
                     <div class="hidden lg:flex items-center gap-x-6 min-w-[111px]">
                         <img width="111" height="111" class="rounded-full bg-gray-50"
-                            src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=1024&amp;h=1024&amp;q=80"
-                            alt="">
+                            src="{{ $testimonial['image'] }}" alt="{{ $testimonial['title'] }}">
                     </div>
                     <div>
                         <div class="flex gap-x-[2px] text-primary">

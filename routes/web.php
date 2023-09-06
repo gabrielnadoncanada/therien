@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', \App\Http\Livewire\FrontPage::class)->name('home');
-
+Route::get('/gallerie', \App\Http\Livewire\Gallery::class)->name('gallery');
 //Route::get('{page:slug}', \App\Http\Livewire\Page::class);
 //Route::get('/blog/{post:slug}', \App\Http\Livewire\Blog\Post::class);
 

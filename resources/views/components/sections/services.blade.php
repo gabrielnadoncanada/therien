@@ -20,8 +20,7 @@
 
         </div>
         <div class=" flex-1 relative">
-            <div
-                class="px-6 lg:pl-0 flex flex-col-reverse md:flex-row mb-8 gap-y-5 gap-x-10 md:items-center 2xl:pb-[492px] ">
+            <div class="px-6  flex flex-col-reverse md:flex-row mb-8 gap-y-5 gap-x-10 md:items-center 2xl:pb-[492px] ">
                 <div class="flex gap-x-5 md:gap-x-10 ">
                     <x-button theme="ghost">
                         <img class="w-[60px] lg:w-[80px]" width="80" src="{{ asset('/svg/before.svg') }}"
@@ -39,7 +38,7 @@
         </div>
     </div>
 
-    <div id="swiper-services" class="px-6 lg:pl-0 bottom-0 2xl:absolute overflow-hidden">
+    <div id="swiper-services" class="px-6  bottom-0 2xl:absolute overflow-hidden">
         <x-slider id="servicers" desktop="auto" navigation="false" width="393">
             @foreach ($services as $index => $service)
                 <x-slide

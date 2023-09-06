@@ -21,7 +21,7 @@ return new class extends Migration {
         $services = \App\Models\Service::insert(array(
                 array(
                     'title' => "Déneigement",
-                    'content' => "L’hiver peut apporter des défis majeurs à votre entreprise. Chez [Nom de l’entreprise], spécialistes en déneigement commercial, nous vous aidons à faire face à ces défis avec notre gamme complète de services de déneigement.",
+                    'content' => "L’hiver peut apporter des défis majeurs à votre entreprise. Chez Thérien, spécialistes en déneigement commercial, nous vous aidons à faire face à ces défis avec notre gamme complète de services de déneigement.",
                 ),
                 array(
                     'title' => "Transport en vrac",
@@ -52,49 +52,49 @@ return new class extends Migration {
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
                 'rating' => 5,
-                'image' => "https://picsum.photos/200/300",
+                'image' => "https://placehold.co/111x111",
             ),
         ),
         );
@@ -179,8 +179,3 @@ return new class extends Migration {
         //
     }
 };
-
-
-
-
-
