@@ -1,4 +1,4 @@
-<section {{ $attributes }}>
+<section class="pt-20 lg:pt-48 max-w-[1600px] mx-auto text-center">
     <div class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-y-[40px] items-center">
         <img src="{{ asset('/svg/partner.svg') }}" alt="">
 

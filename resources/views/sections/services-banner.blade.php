@@ -1,4 +1,4 @@
-<section {{ $attributes }}>
+<section class="py-8 bg-primary max-w-none relative overflow-hidden">
     <div class="flex" id="scroll-container">
         <div id="scroll-text"
             class="flex pr-[2.5rem] flex-row gap-10 items-center justify-start inline-block   whitespace-nowrap text-foreground text-left relative">

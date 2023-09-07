@@ -93,22 +93,23 @@ let Sliders = document.querySelectorAll(
         speed,
         loop,
         keyboard,
+        watchSlidesProgress: true,
         mousewheel,
         autoHeight,
         parallax,
         breakpoints: {
             320: {
-                slidesPerView: 1,
+                slidesPerView: phoneItems,
                 spaceBetween: phoneSpace,
             },
 
             601: {
-                slidesPerView: 1,
+                slidesPerView: tabItems,
                 spaceBetween: tabSpace,
             },
 
             992: {
-                slidesPerView: 1,
+                slidesPerView: deskItems,
                 spaceBetween: deskSpace,
             },
         },

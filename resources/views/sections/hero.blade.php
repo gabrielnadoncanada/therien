@@ -1,4 +1,4 @@
-<section class="relative isolate  min-h-screen flex items-center">
+<section class="relative isolate  flex items-center">
     <div class="absolute h-full w-full "
         style="
 background: linear-gradient(180deg, #1C211B 0%, rgba(28, 33, 27, 0.30) 100%), url('/images/362203938_717630203706652_3259959972436561142_n 2.jpg'), lightgray 0 0 / 123.676% 123.611% no-repeat;
@@ -7,17 +7,17 @@ background-position: center bottom;
 background-size: cover;
 background-blend-mode: hard-light, normal;">
     </div>
-    <a href="" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[58px]">
-        <svg width="154" height="156" viewBox="0 0 154 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="/#a-propos" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[58px]">
+        <svg class="max-w-[150px] " width="154" height="156" viewBox="0 0 154 156" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M2.10749 80.0537C21.9845 80.0537 41.0473 87.9498 55.1025 102.005C69.1576 116.06 77.0537 135.123 77.0537 155C77.0537 135.123 84.9499 116.06 99.005 102.005C113.06 87.9498 132.123 80.0537 152 80.0537"
                 stroke="#ABE85E" stroke-width="4" stroke-linecap="round" />
             <path d="M77 154L77 116.064L77 2" stroke="#ABE85E" stroke-width="4" stroke-linecap="round" />
         </svg>
     </a>
-    <div class="mx-auto py-32 sm:py-48 lg:pb-40 lg:pt-44 relative">
+    <div class="mx-auto py-[10rem] 2xl:py-[15rem] relative">
         <div class="text-center px-6">
-            <img class="mb-6 md:mb-[20px] mx-auto max-w-[200px] lg:max-w-[275px]"
+            <img class="mb-6 md:mb-[20px] mx-auto max-w-[200px] 2xl:max-w-[275px]"
                 src="{{ asset('images/logo-therien.svg') }}" alt="" width="275">
             <x-text as="h1" theme="h1" class="text-white max-w-6xl mx-auto">Transformez vos rêves
                 en&nbsp;espaces extraordinaires.</x-text>

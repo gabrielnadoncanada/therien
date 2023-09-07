@@ -1,20 +1,20 @@
 <x-modal id="contact" class="bg-foreground ">
     <img class="hidden lg:block mb-[45px]  mx-auto max-w-[180px] lg:max-w-[220px]"
         src="{{ asset('images/logo-therien.svg') }}" alt="" width="220">
-    <div class="mb-[25px] pt-[40px] lg:mb-[50px] col-span-2 text-base flex flex-wrap justify-between leading-6 gap-y-4"
+    <div class="mb-[25px] pt-[40px] lg:mb-[50px] col-span-2 text-base flex flex-wrap justify-between leading-6 gap-4"
         id="modal-title">
-        <p class="text-[16px] text-primary leading-[1.2]">
+        <p class="text-[16px] lg:text-[24px] text-primary leading-[1.2]">
             <b>Thérien Inc.</b><br>
             Paysagement&nbsp;/&nbsp;Déneigement
         </p>
-        <p class="text-[16px] text-primary leading-[1.2]">
+        <p class="text-[16px] lg:text-[24px] text-primary leading-[1.2]">
             <a href="tel:514-838-8063">514 . 838 . 8063</a><br>
             <a href="mailto:paysagistestephanetherien@hotmail.ca">paysagistestephanetherien@hotmail.ca</a>
         </p>
     </div>
     <x-form wire:submit.prevent="submit" class="grid grid-cols-2 gap-y-[15px] lg:gap-y-[30px] gap-x-[20px]">
 
-        <x-form.field class="col-span-2">
+        <x-form.field class="col-span-2 lg:col-span-1">
             <x-form.label class="text-primary" for="firstName">Prénom</x-form.label>
             <div class="flex-1 relative">
                 <div class="rounded-md shadow-sm">
@@ -25,7 +25,7 @@
             </div>
         </x-form.field>
 
-        <x-form.field class="col-span-2">
+        <x-form.field class="col-span-2 lg:col-span-1">
             <x-form.label class="text-primary" for="lastName">Nom</x-form.label>
             <div class="flex-1 relative ">
                 <div class="rounded-md shadow-sm">

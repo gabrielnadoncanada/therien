@@ -1,4 +1,4 @@
-<section {{ $attributes }}>
+<section class="pt-20 relative lg:pt-96" >
 
     <style>
         @media only screen and (min-width: 1548px) {
@@ -22,10 +22,10 @@
     </div>
 
     <div id="swiper-testimonials" class="px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 ">
-        <x-slider id="testimonials" desktop="auto" navigation="false" pagination="false" width="500">
+        <x-slider id="testimonials" desktop="auto"  navigation="false" pagination="false" width="500">
             @foreach ($testimonials as $index => $testimonial)
                 <x-slide
-                    class="max-w-[100%] swiper-slide mx-auto  flex gap-x-[32px]  rounded-[50px] px-[50px] py-[40px] lg:px-[40px]  border border-primary lg:rounded-[200px]">
+                    class="max-w-[500px]  swiper-slide mx-auto  flex gap-x-[32px]  rounded-[50px] px-[50px] py-[40px] lg:px-[40px]  border border-primary lg:rounded-[200px]">
                     <div class="hidden lg:flex items-center gap-x-6 min-w-[111px]">
                         <img width="111" height="111" class="rounded-full bg-gray-50"
                             src="{{ $testimonial['image'] }}" alt="{{ $testimonial['title'] }}">

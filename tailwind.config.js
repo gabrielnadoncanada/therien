@@ -17,7 +17,7 @@ export default {
             md: "782px",
             lg: "1024px",
             xl: "1280px",
-            "2xl": "1548px",
+            "2xl": "1536px",
         },
         fontSize: {
             xs: ['0.75rem', { lineHeight: '1rem' }],

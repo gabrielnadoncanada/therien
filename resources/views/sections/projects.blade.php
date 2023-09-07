@@ -1,6 +1,6 @@
-<section {{ $attributes }}>
+<section id="a-propos" class="pt-20 lg:pt-44 pb-20 lg:pb-36 relative">
     <div class="absolute w-[1062px] h-[1062px] left-1/2 top-0 -translate-x-1/2 -translate-y-[75%] z-[-1]"
-        style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);">
+         style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);">
     </div>
 
     <div class="mx-auto max-w-[1548px] px-6">
@@ -28,31 +28,40 @@
                 </div>
             </div>
             <div class="lg:min-w-[450px] lg:max-w-[750px]">
-                <div class="relative sm:mx-auto  sm:rounded-3xl  sm:pr-0 lg:mx-0 h-full">
+                <div class="relative ">
                     <img class="hidden lg:block absolute top-[-45px] right-[-100px] z-[20]"
-                        src="{{ asset('/svg/paint.svg') }}" alt="">
-                    <x-slider id="projects" navigation="false" pagination="true" desktop="1" class="h-full">
+                         src="{{ asset('/svg/paint.svg') }}" alt="">
+                    <x-slider id="projects" navigation="false" pagination="true" desktop="1">
                         @foreach ($projects as $index => $project)
-                            <x-slide class="pr-[60px]" x-data="{ showAfter: false }">
+                            <x-slide class="pl-[60px] pt-[60px] aspect-[35/43]" x-data="{ showAfter: false }">
+                                <div class="flex-1 relative">
 
-                                <x-button theme="ghost" @click="showAfter = !showAfter"
-                                    x-text="showAfter ? 'Voir l’avant' : 'Voir l’après'"
-                                    class="z-[2] absolute left-[40px] bottom-[40px] px-[20px] py-[10px] rounded-[50px] text-[32px] font-display text-white border border-white font-[400]">
-                                </x-button>
-
-                                <div class="rounded-[50px] w-full  h-full absolute  bottom-0 max-w-[700px] bg-no-repeat	bg-cover	"
-                                    :class="{ 'right-0 z-[-1] top-[60px] hasFilter': showAfter, 'left-0 top-0': !showAfter }"
-                                    style="background: url('{{ asset('/storage/' . $project['before_image']) }}');">
-                                </div>
+                                    <x-button theme="ghost" @click="showAfter = !showAfter"
+                                              x-text="showAfter ? 'Voir l’avant' : 'Voir l’après'"
+                                              class="z-[2] absolute -left-[20px] bottom-[117px] px-[20px] py-[10px] rounded-[50px] text-[32px] font-display text-white border border-white font-[400]">
+                                    </x-button>
 
 
-                                <div class="rounded-[50px] w-full  h-full absolute    max-w-[700px] bg-no-repeat	bg-cover	"
-                                    :class="{
-                                        'z-[1] top-0 left-0 ': showAfter,
-                                        'right-0 z-[-1] top-[60px] hasFilter': !
+                                    <div
+                                        class="bg-gradient-to-b custom-gradient absolute left-0 top-0 w-full h-full"></div>
+
+
+                                    <img
+                                        class="aspect-[35/43] rounded-[50px] w-full  absolute  bg-no-repeat	bg-cover	"
+                                        :class="{ ' z-[-1] top-0 hasFilter': showAfter, '-top-[60px] -left-[60px]': !showAfter }"
+                                        src="{{ asset('/storage/' . $project['before_image']) }}">
+                                    </img>
+
+
+                                    <img
+                                        class="aspect-[35/43] rounded-[50px] w-full  absolute     bg-no-repeat	bg-cover	"
+                                        :class="{
+                                        'z-[1] -top-[60px] -left-[60px]': showAfter,
+                                        ' z-[-1] top-0 hasFilter': !
                                             showAfter
                                     }"
-                                    style="background: url('{{ asset('/storage/' . $project['after_image']) }}');">
+                                        src="{{ asset('/storage/' . $project['after_image']) }}">
+                                    </img>
                                 </div>
                             </x-slide>
                         @endforeach

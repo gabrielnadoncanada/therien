@@ -1,6 +1,6 @@
 @props([
-    'desktop' => 3,
-    'tablet' => 3,
+    'desktop' => 1,
+    'tablet' => 1,
     'mobile' => 1,
     'autoplay' => 'false',
     'autoplayDelay' => 2000,
@@ -20,19 +20,20 @@
     'nextEl' => 'false',
     'prevEl' => 'false',
     'width' => 'false',
+    'direction' => 'horizontal',
 ])
 
 
 <div {{ $attributes->merge(['class' => 'slider slider-active-pagination relative']) }}>
     <div class="slider-container swiper h-full" data-nextel="{{ $nextEl }}" data-prevel="{{ $prevEl }}"
-        data-desktop="{{ $desktop }}" data-tablet="{{ $tablet }}" data-mobile="{{ $mobile }}"
-        data-autoplay="{{ $autoplay }}" data-autoplaydelay="{{ $autoplayDelay }}"
-        data-autoplaydirection="{{ $autoplayDirection }}" data-speed="{{ $speed }}"
-        data-loop="{{ $loop }}" data-pauseonhover="{{ $pauseOnHover }}" data-keyboard="{{ $keyboard }}"
-        data-mousewheel="{{ $mousewheel }}" data-autoheight="{{ $autoHeight }}"
-        data-deskspace="{{ $deskSpace }}" data-tabspace="{{ $tabSpace }}"
-        data-phonespace="{{ $phoneSpace }}" data-id="{{ $id }}" data-pagination="{{ $pagination }}"
-        data-navigation="{{ $navigation }}" data-width="{{ $width }}" id="{{ $id }}">
+         data-desktop="{{ $desktop }}" data-tablet="{{ $tablet }}" data-mobile="{{ $mobile }}"
+         data-autoplay="{{ $autoplay }}" data-autoplaydelay="{{ $autoplayDelay }}"
+         data-autoplaydirection="{{ $autoplayDirection }}" data-speed="{{ $speed }}"
+         data-loop="{{ $loop }}" data-pauseonhover="{{ $pauseOnHover }}" data-keyboard="{{ $keyboard }}"
+         data-mousewheel="{{ $mousewheel }}" data-autoheight="{{ $autoHeight }}"
+         data-deskspace="{{ $deskSpace }}" data-tabspace="{{ $tabSpace }}"
+         data-phonespace="{{ $phoneSpace }}" data-id="{{ $id }}" data-pagination="{{ $pagination }}"
+         data-navigation="{{ $navigation }}" data-width="{{ $width }}" data-direction="{{ $direction }}" id="{{ $id }}" x-ref="{{ $id }}">
         <div class="swiper-wrapper">
             {{ $slot }}
         </div>

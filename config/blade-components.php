@@ -17,37 +17,14 @@ return [
                 'pink'    => 'inline-flex items-center px-2.5 py-0.5 rounded-full font-medium bg-pink-100 text-pink-800',
             ],
         ],
-        'button' => [
-            'class'  => Components\Button::class,
-            'themes' => [
-                'default' => 'leading-6	rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'light'   => 'leading-6 rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px]   leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large-dark'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'ghost'   => '',
-                'outline' => [
-                    'primary' => 'leading-6 rounded-md border border-primary px-6 py-2.5 text-base font-semibold text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                ],
-                'tab'     => [
-                    'innactive' => 'saas',
-                    'active'    => 'px-0 border-b-2 border-[#5377DD] rounded-none border-primary shadow-none	',
 
-                ],
-            ],
-        ],
         'nav' => [
             'class'  => Components\Nav::class,
             'themes' => [
                 'default' => 'nav',
             ],
         ],
-        'nav-link'  => [
-            'class'  => Components\NavLink::class,
-            'themes' => [
-                'default' => 'text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[20px] relative rounded-md text-white hover:text-primary transition ease-in-out duration-150',
-                'active'  => 'text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[20px] relative rounded-md text-primary pointer-events-none ',
-            ],
-        ],
+
         'menu-item' => [
             'class'  => Components\MenuItem::class,
             'themes' => [
@@ -63,7 +40,7 @@ return [
             'field' => [
                 'class'  => Components\Form\Field::class,
                 'themes' => [
-                    'default' => 'flex-col flex gap-x-2 text-white rounded-md px-3 py-[10px] lg:py-[20px] shadow-sm ring-1 ring-inset ring-primary focus-within:ring-2 focus-within:ring-accent',
+                    'default' => 'flex-col lg:flex-row flex gap-x-2 text-white rounded-md px-3 py-[10px] lg:py-[20px] shadow-sm ring-1 ring-inset ring-primary focus-within:ring-2 focus-within:ring-accent',
                     // 'default' => 'flex items-center border border-primary rounded-[5px] p-[20px] gap-x-[10px] flex',
                 ],
             ],
@@ -72,12 +49,12 @@ return [
                 'class'  => Components\Form\Input::class,
                 'themes' => [
                     'default' => [
-                        'normal'   => 'p-0 bg-transparent block w-full rounded-md border-0 py-0 pr-10   text-[18px] focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
+                        'normal'   => 'p-0 lg-pl-[12px] bg-transparent block w-full rounded-md border-0 py-0 pr-10   text-[18px] focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                         // 'normal'   => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
-                        'invalid'  => 'block w-full rounded-md border-0 py-1.5 pr-10 text-red-900 ring-1 ring-inset ring-red-300 placeholder:text-red-300 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6',
+                        'invalid'   => 'p-0 lg-pl-[12px] bg-transparent block w-full rounded-md border-0 py-0 pr-10   text-[18px] focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
 
                         // 'invalid'  => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
-                        'disabled' => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
+                        'disabled'   => 'p-0 lg-pl-[12px] bg-transparent block w-full rounded-md border-0 py-0 pr-10   text-[18px] focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                     ],
                 ],
             ],
@@ -125,13 +102,13 @@ return [
                     'default' => [
                         'normal' => 'p-0 bg-transparent block w-full rounded-md border-0 py-0 text-[18px] shadow-sm  focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                         // 'normal'   => 'font-display p-0 bg-transparent border-0 text-[24px] text-primary block w-full focus:ring-primary focus:border-primary ',
-                        'invalid'  => 'block w-full rounded-md border-0 py-1.5 pr-10 text-red-900 ring-1 ring-inset ring-red-300 placeholder:text-red-300 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6',
+                        'invalid' => 'p-0 bg-transparent block w-full rounded-md border-0 py-0 text-[18px] shadow-sm  focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                         // 'invalid'  => 'max-w-lg shadow-sm block w-full focus:ring-red-500 focus:border-red-500 sm:text-sm border-gray-300 rounded-md',
-                        'disabled' => 'bg-gray-50 max-w-lg shadow-sm block w-full focus:ring-gray-500 focus:border-gray-500 sm:text-sm border-gray-300 rounded-md',
+                        'disabled' => 'p-0 bg-transparent block w-full rounded-md border-0 py-0 text-[18px] shadow-sm  focus:ring-2 focus:ring-inset focus:ring-[transparent] lg:text-[24px] sm:leading-6',
                     ],
                 ],
             ],
-        
+
             'checkbox' => [
                 'class'  => Components\Form\Checkbox::class,
                 'themes' => [
@@ -157,12 +134,37 @@ return [
                 ],
             ],
         ],
+        'nav-link'  => [
+            'class'  => Components\NavLink::class,
+            'themes' => [
+                'default' => 'text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[20px] relative rounded-md text-white hover:text-primary transition ease-in-out duration-150',
+                'active'  => 'text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[20px] relative rounded-md text-primary pointer-events-none ',
+            ],
+        ],
+        'button' => [
+            'class'  => Components\Button::class,
+            'themes' => [
+                'default' => 'leading-6	rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'light'   => 'leading-6 rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large'   => 'text-[24px] sm:text-[26px] md:text-[28px]  2xl:text-[36px]   leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large-dark'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'ghost'   => '',
+                'outline' => [
+                    'primary' => 'leading-6 rounded-md border border-primary px-6 py-2.5 text-base font-semibold text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                ],
+                'tab'     => [
+                    'innactive' => 'saas',
+                    'active'    => 'px-0 border-b-2 border-[#5377DD] rounded-none border-primary shadow-none	',
+
+                ],
+            ],
+        ],
         'text' => [
             'class'  => Components\Text::class,
             'themes' => [
-                'default' => 'text-foreground text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
-                'invert' => 'text-white text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] ',
-                'h1' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] xl:text-[96px] leading-[1]  font-display',
+                'default' => 'text-[18px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] leading-[1.5] text-foreground ',
+                'invert' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] text-white ',
+                'h1' => 'text-[40px] sm:text-[50px] md:text-[60px]  2xl:text-[96px] leading-[1]  font-display',
                 'h2' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[64px] leading-[1]  font-display',
                 'h3' => 'text-[34px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px] leading-[1]  font-display',
                 'h6' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-white leading-[1.3] ',
