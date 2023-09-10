@@ -49,6 +49,7 @@ textarea::placeholder {
 }
 
 @media only screen and (min-width: 1024px) {
+
     input::placeholder,
     textarea::placeholder {
         font-size: 24px !important;
@@ -130,8 +131,90 @@ header .nav>li:not(:last-child)>a::after {
 .custom-gradient {
     background-image: linear-gradient(180deg, rgba(22, 25, 21, 0.00) 0%, #161915 61.98%);
 }
+
+
+#a-propos .flickity-page-dots {
+
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 26px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#a-propos .flickity-page-dots .dot {
+    background: transparent !important;
+    border: 1px solid var(--primary) !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+
+
+
+#a-propos .flickity-page-dots .dot.is-selected {
+    position: relative;
+
+}
+
+#a-propos .flickity-page-dots .dot.is-selected::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary);
+}
+
 /*.hasFilter::after {*/
 /*    content: '';*/
 /*    @apply absolute left-0 top-0 w-full h-full;*/
 /*    background-image: linear-gradient(180deg, rgba(22, 25, 21, 0.00) 0%, #161915 61.98%);*/
 /*}*/
+
+
+@media only screen and (min-width: 1548px) {
+    #swiper-services {
+        position: absolute !important;
+    }
+
+    #swiper-testimonials {
+        position: absolute !important;
+    }
+}
+
+
+#a-propos .flickity-viewport {
+    height: 860px !important;
+    border-radius: 50px;
+
+}
+
+@media only screen and (min-width: 1548px) {
+    #swiper-testimonials {
+        left: calc((50% - 1548px / 2) + 60px + 80px);
+    }
+
+}
+
+/* #swiper-testimonials .flickity-viewport {
+    height: 191px !important;
+
+} */
+
+
+@media only screen and (min-width: 1548px) {
+    #swiper-services {
+        left: calc((50% - 1548px / 2) + 275px + 80px);
+    }
+
+}
+
+/* #swiper-services .flickity-viewport {
+    height: 492px !important;
+
+} */

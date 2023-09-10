@@ -1,13 +1,5 @@
-<section class="pt-20 relative lg:pt-96" >
+<section class="pt-20 relative lg:pt-96">
 
-    <style>
-        @media only screen and (min-width: 1548px) {
-            #swiper-testimonials {
-                left: calc((50% - 1548px / 2) + 60px + 80px);
-            }
-
-        }
-    </style>
     <div class="hidden max-w-[1548px]
  mx-auto 2xl:flex gap-x-[67px]  items-center px-6">
         <svg class="min-w-[60px]" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"
@@ -21,34 +13,43 @@
         </svg>
     </div>
 
-    <div id="swiper-testimonials" class="px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 ">
-        <x-slider id="testimonials" desktop="auto"  navigation="false" pagination="false" width="500">
-            @foreach ($testimonials as $index => $testimonial)
-                <x-slide
-                    class="max-w-[500px]  swiper-slide mx-auto  flex gap-x-[32px]  rounded-[50px] px-[50px] py-[40px] lg:px-[40px]  border border-primary lg:rounded-[200px]">
-                    <div class="hidden lg:flex items-center gap-x-6 min-w-[111px]">
-                        <img width="111" height="111" class="rounded-full bg-gray-50"
-                            src="{{ $testimonial['image'] }}" alt="{{ $testimonial['title'] }}">
+    <div id="swiper-testimonials" class="w-full carousel px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 "
+        x-init="carousel = new Flickity(document.querySelector('#swiper-testimonials'), {
+            draggable: true,
+            wrapAround: true,
+            cellAlign: 'left',
+            prevNextButtons: false,
+            pageDots: false,
+        });" x-data="{
+            carousel: null,
+        }">
+
+        @foreach ($testimonials as $index => $testimonial)
+            <div
+                class="mr-[30px] w-[500px]  mx-auto  flex gap-x-[32px]  py-[40px] px-[40px]  border border-primary rounded-[200px]">
+                <div class=" flex items-center gap-x-6 min-w-[111px]">
+                    <img width="111" height="111" class="rounded-full bg-gray-50" src="{{ $testimonial['image'] }}"
+                        alt="{{ $testimonial['title'] }}">
+                </div>
+                <div class="flex flex-col gap-y-[12px]">
+                    <div class="flex gap-x-[2px] text-primary">
+                        @for ($i = 0; $i < $testimonial['rating']; $i++)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-none" viewBox="0 0 16 16"
+                                fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z"
+                                    fill="#ABE85E" />
+                            </svg>
+                        @endfor
                     </div>
-                    <div>
-                        <div class="flex gap-x-[2px] text-primary">
-                            @for ($i = 0; $i < $testimonial['rating']; $i++)
-                                <svg class="h-4 w-4 flex-none" viewBox="0 0 20 20" fill="currentColor"
-                                    aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            @endfor
-                        </div>
-                        <h3 class="text-gray-900 text-primary font-display text-[36px] leading-1">
-                            {{ $testimonial['title'] }}</h3>
-                        <p class="text-white">
-                            {{ $testimonial['content'] }}
-                        </p>
-                    </div>
-                </x-slide>
-            @endforeach
-        </x-slider>
+                    <h3 class="text-gray-900 text-primary font-display text-[36px] leading-1">
+                        {{ $testimonial['title'] }}</h3>
+                    <p class="text-white">
+                        {{ $testimonial['content'] }}
+                    </p>
+                </div>
+            </div>
+        @endforeach
+
     </div>
 </section>

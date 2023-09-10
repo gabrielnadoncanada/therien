@@ -169,6 +169,14 @@ return [
                 'h3' => 'text-[34px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px] leading-[1]  font-display',
                 'h6' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-white leading-[1.3] ',
             ],
+            // 'themes' => [
+            //     'default' => 'text-[18px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] leading-[1.5] text-foreground',
+            //     'invert' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] text-white',
+            //     'h1' => 'font-display',
+            //     'h2' => 'font-display',
+            //     'h3' => 'font-display',
+            //     'h6' => 'text-white leading-[1.3] ',
+            // ],
         ],
     ],
 ];

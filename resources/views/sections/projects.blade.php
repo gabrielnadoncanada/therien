@@ -1,6 +1,6 @@
 <section id="a-propos" class="pt-20 lg:pt-44 pb-20 lg:pb-36 relative">
     <div class="absolute w-[1062px] h-[1062px] left-1/2 top-0 -translate-x-1/2 -translate-y-[75%] z-[-1]"
-         style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);">
+        style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);">
     </div>
 
     <div class="mx-auto max-w-[1548px] px-6">
@@ -27,45 +27,42 @@
                     <x-button theme="large" class="mr-auto" @click="toggle('contact')">Ca m’intéresse</x-button>
                 </div>
             </div>
-            <div class="lg:min-w-[450px] lg:max-w-[750px]">
+            <div class="flex-1 lg:min-w-[450px] lg:max-w-[750px]">
                 <div class="relative ">
                     <img class="hidden lg:block absolute top-[-45px] right-[-100px] z-[20]"
-                         src="{{ asset('/svg/paint.svg') }}" alt="">
-                    <x-slider id="projects" navigation="false" pagination="true" desktop="1">
+                        src="{{ asset('/svg/paint.svg') }}" alt="">
+
+                    <style>
+
+                    </style>
+                    <div class="carousel" x-data="{ showAfter: false }"
+                        data-flickity='{ "draggable": true,  "prevNextButtons": false,"wrapAround": true, "cellAlign": "left" }'>
                         @foreach ($projects as $index => $project)
-                            <x-slide class="pl-[60px] pt-[60px] aspect-[35/43]" x-data="{ showAfter: false }">
-                                <div class="flex-1 relative">
-
-                                    <x-button theme="ghost" @click="showAfter = !showAfter"
-                                              x-text="showAfter ? 'Voir l’avant' : 'Voir l’après'"
-                                              class="z-[2] absolute -left-[20px] bottom-[117px] px-[20px] py-[10px] rounded-[50px] text-[32px] font-display text-white border border-white font-[400]">
-                                    </x-button>
-
-
-                                    <div
-                                        class="bg-gradient-to-b custom-gradient absolute left-0 top-0 w-full h-full"></div>
-
-
-                                    <img
-                                        class="aspect-[35/43] rounded-[50px] w-full  absolute  bg-no-repeat	bg-cover	"
-                                        :class="{ ' z-[-1] top-0 hasFilter': showAfter, '-top-[60px] -left-[60px]': !showAfter }"
-                                        src="{{ asset('/storage/' . $project['before_image']) }}">
-                                    </img>
-
-
-                                    <img
-                                        class="aspect-[35/43] rounded-[50px] w-full  absolute     bg-no-repeat	bg-cover	"
-                                        :class="{
-                                        'z-[1] -top-[60px] -left-[60px]': showAfter,
-                                        ' z-[-1] top-0 hasFilter': !
-                                            showAfter
-                                    }"
-                                        src="{{ asset('/storage/' . $project['after_image']) }}">
-                                    </img>
+                            <div class="w-full h-full rounded-[50px] ">
+                                <div class="bg-gradient-to-b custom-gradient  absolute left-0 top-0 w-full h-full">
                                 </div>
-                            </x-slide>
+                                <img class="w-full aspect-[35/43] absolute rounded-[50px] h-full object-cover "
+                                    style="max-width: calc(100% - 60px);" width="700"
+                                    src="{{ asset('/storage/' . $project['before_image']) }}" alt=""
+                                    :class="{
+                                        ' z-[-1] right-0 top-[60px]': showAfter,
+                                        'z-[1] ': !showAfter
+                                    }">
+
+                                <img class="aspect-[35/43] absolute rounded-[50px] h-full object-cover " width="700"
+                                    src="{{ asset('/storage/' . $project['after_image']) }}" alt=""
+                                    style="max-width: calc(100% - 60px);"
+                                    :class="{
+                                        '  top-0 ': showAfter,
+                                        'z-[-1] right-0 top-[60px]': !showAfter
+                                    }">
+                                <x-button theme="ghost" @click="showAfter = !showAfter"
+                                    x-text="showAfter ? 'Voir l’avant' : 'Voir l’après'"
+                                    class="z-[2] absolute left-[40px] bottom-[42px] px-[20px] py-[10px] rounded-[50px] text-[32px] font-display text-white border border-white font-[400]">
+                                </x-button>
+                            </div>
                         @endforeach
-                    </x-slider>
+                    </div>
                 </div>
             </div>
         </div>

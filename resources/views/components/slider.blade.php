@@ -25,7 +25,8 @@
 
 
 <div {{ $attributes->merge(['class' => 'slider slider-active-pagination relative']) }}>
-    <div class="slider-container swiper h-full" data-nextel="{{ $nextEl }}" data-prevel="{{ $prevEl }}"
+    {{ $slot }}
+    {{-- <div class="slider-container swiper h-full" data-nextel="{{ $nextEl }}" data-prevel="{{ $prevEl }}"
          data-desktop="{{ $desktop }}" data-tablet="{{ $tablet }}" data-mobile="{{ $mobile }}"
          data-autoplay="{{ $autoplay }}" data-autoplaydelay="{{ $autoplayDelay }}"
          data-autoplaydirection="{{ $autoplayDirection }}" data-speed="{{ $speed }}"
@@ -44,5 +45,5 @@
             <div class="slider-prev swiper-button-prev"></div>
             <div class="slider-next swiper-button-next"></div>
         </div>
-    @endif
+    @endif --}}
 </div>
