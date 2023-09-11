@@ -195,7 +195,7 @@ header .nav>li:not(:last-child)>a::after {
 }
 
 #swiper-services .flickity-viewport{
-   height: 492px;
+   height: 492px !important;
 }
 
 @media only screen and (min-width: 1548px) {
