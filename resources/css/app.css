@@ -194,6 +194,10 @@ header .nav>li:not(:last-child)>a::after {
 
 }
 
+#swiper-services .flickity-viewport{
+   height: 492px;
+}
+
 @media only screen and (min-width: 1548px) {
     #swiper-testimonials {
         left: calc((50% - 1548px / 2) + 60px + 80px);
