@@ -2,9 +2,8 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PartnerResource\Pages;
-use App\Filament\Resources\PartnerResource\RelationManagers;
-use App\Models\Partner;
+use App\Filament\Resources\AchievementResource\Pages;
+use App\Models\Achievement;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
@@ -12,11 +11,12 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PartnerResource extends Resource
+class AchievementResource extends Resource
 {
-    protected static ?string $model = Partner::class;
+    protected static ?string $model = Achievement::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -24,17 +24,24 @@ class PartnerResource extends Resource
     {
         return $form
             ->schema([
+
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(191),
+                Forms\Components\Select::make('service_id')
+                    ->relationship('services', 'title')
+                    ->searchable()
+                    ->multiple(),
                 Forms\Components\Section::make('Images')
                     ->schema([
                         SpatieMediaLibraryFileUpload::make('media')
-                            ->collection('partners-images')
+                            ->collection('achievements-images')
+                            ->multiple()
                             ->maxFiles(5)
                             ->disableLabel(),
                     ])
                     ->collapsible(),
+
             ]);
     }
 
@@ -42,6 +49,17 @@ class PartnerResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('service_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
             ])
@@ -58,8 +76,7 @@ class PartnerResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-            ])->reorderable('sort')
-            ->defaultSort('sort', 'asc');
+            ]);
     }
 
     public static function getRelations(): array
@@ -72,9 +89,9 @@ class PartnerResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPartners::route('/'),
-            'create' => Pages\CreatePartner::route('/create'),
-            'edit' => Pages\EditPartner::route('/{record}/edit'),
+            'index' => Pages\ListAchievements::route('/'),
+            'create' => Pages\CreateAchievement::route('/create'),
+            'edit' => Pages\EditAchievement::route('/{record}/edit'),
         ];
     }
 }

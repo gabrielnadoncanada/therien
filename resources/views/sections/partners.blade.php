@@ -24,9 +24,10 @@
         <div class="mt-[20px] flex flex-col gap-[42px] items-center justify-start  relative">
             <div class="flex flex-row gap-[30px] flex-wrap items-center justify-center self-stretch shrink-0 relative">
                 @foreach ($partners as $index => $partner)
+
                     <div
                         class="partner aspect-[16/9] rounded-[15px] border-solid border-[#ffffff] border-2 p-4 sm:p-10 lg:p-15 flex flex-col gap-2.5 items-center justify-center  relative">
-                        <img class="shrink-0  relative" src="/storage/{{ $partner['image'] }}"
+                        <img class="shrink-0  relative" src="{{$partner->getMedia('partners-images')[0]->getUrl()}}"
                             alt="{{ $partner['title'] }}" />
                     </div>
                 @endforeach

@@ -1,5 +1,5 @@
-<header x-data="{ open: false }" @keydown.window.escape="open = false" class="px-6 absolute z-10 w-full">
-    <nav class="mt-[20px] mx-auto flex max-w-[635px] justify-between gap-x-[32px] px-[30px] py-[20px]  rounded-[60px] bg-[#161A15]"
+<header x-data="{ open: false }" @keydown.window.escape="open = false" class="px-6 fixed z-10 w-full">
+    <nav class="mt-[20px] mx-auto flex max-w-[635px] justify-between gap-x-[32px] px-[30px] py-[20px]  rounded-[60px] bg-secondary"
         style="box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25)" aria-label="Global">
         <div class="flex items-center">
             <a href="{{ route('home') }}" class="-mt-[5px] min-w-[115px] ">

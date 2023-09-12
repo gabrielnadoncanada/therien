@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repositories\AchievementRepository;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Illuminate\Support\ServiceProvider;
 use Filament\Forms;

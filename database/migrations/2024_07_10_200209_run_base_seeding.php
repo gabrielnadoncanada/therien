@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Achievement;
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -45,7 +47,6 @@ return new class extends Migration {
                 ),
             )
         );
-
 
         \App\Models\Testimonial::insert(array(
             array(
@@ -103,96 +104,94 @@ return new class extends Migration {
         $partners = \App\Models\Partner::insert(array(
             array(
                 'title' => "Groupe Richer",
-                'image' => "groupe-richer.png"
             ),
             array(
                 'title' => "Blocs Mirabel",
-                 'image' => "bloc-mirabel.png"
             ),
             array(
                 'title' => "Bloc Pavé",
-                 'image' => "bloc-pave.png"
             ),
             array(
                 'title' => "Pétrole Bélanger",
-                 'image' => "petrole-belanger.png"
             ),
             array(
                 'title' => "Permacon",
-                 'image' => "permacon.png"
             ),
             array(
                 'title' => "Techno Bloc",
-                 'image' => "techno-block.png"
             ),
             array(
                 'title' => "J.René Lafond",
-                 'image' => "j-rene-lafond.png"
             ),
             array(
                 'title' => "Gazon Ethier",
-                 'image' => "gazon-ethier.png"
             )
         ));
 
-        $projects = \App\Models\Project::insert(array(
-            array(
-                'title' => "1",
-                'before_image' => "project.png",
-                'after_image' => "project2.png",
-            ),
-            array(
-                'title' => "2",
-                'before_image' => "project.png",
-                'after_image' => "project2.png",
-            ),
-            array(
-                'title' => "3",
-                'before_image' => "project.png",
-                'after_image' => "project2.png",
-            ),
-            array(
-                'title' => "4",
-                'before_image' => "project.png",
-                'after_image' => "project2.png",
-            ),
-            array(
-                'title' => "5",
-                'before_image' => "project.png",
-                'after_image' => "project2.png",
-            ),
-        ));
+
+        $partners = \App\Models\Partner::orderBy('id', 'desc')->get();
+
+        $partners_images = [
+            "groupe-richer.png",
+            "bloc-mirabel.png",
+            "bloc-pave.png",
+            "petrole-belanger.png",
+            "permacon.png",
+            "techno-block.png",
+            "j-rene-lafond.png",
+            "gazon-ethier.png",
+        ];
+
+        foreach ($partners as $index => $partner) {
+            // Path to your image, adjust as needed
+            $imagePath = storage_path('app/public/' . $partners_images[$index]);
+
+            // Attach the image to the achievement
+            $partner->addMedia($imagePath)->preservingOriginal()
+                ->toMediaCollection('partners-images');
+        }
 
 
-//	    \App\Models\Language::insert(
-//		    array(
-//			    'name' => "FR",
-//			    'code' => "fr",
-//		    )
-//	    );
-//	    \App\Models\Language::insert(
-//		    array(
-//			    'name' => "En",
-//			    'code' => "en",
-//		    )
-//	    );
-//
-//	    \App\Models\Post::insert(
-//		    array(
-//			    'order' => 1,
-//			    'user_id' => 1,
-//		    )
-//	    );
-//
-//	    \App\Models\PostMetadata::insert(
-//		    array(
-//				'language_id' => 1,
-//				'slug' => 'post-1',
-//				'title' => 'Post 1',
-//				'status' => 'published',
-//				'post_id' => 1
-//		    )
-//	    );
+        $titles = ["1", "2", "3", "4", "5"];
+        $projectsData = array_map(function ($title) {
+            return ['title' => $title];
+        }, $titles);
+
+        Project::insert($projectsData);
+
+        $projects = Project::orderBy('id', 'desc')->get();
+
+        foreach ($projects as $index => $project) {
+            // Path to your image, adjust as needed
+            $imagePath1 = storage_path('app/public/project.png');
+            $imagePath2 = storage_path('app/public/project2.png');
+
+            // Attach the image to the achievement
+            $project->addMedia($imagePath1)->preservingOriginal()
+                ->toMediaCollection('projects-images');
+            $project->addMedia($imagePath2)->preservingOriginal()
+                ->toMediaCollection('projects-images');
+        }
+
+
+        $titlesAchievement = ["1", "2", "3", "4", "5", "6", "7"];
+        $achievementsData = array_map(function ($titlesAchievement) {
+            return ['title' => $titlesAchievement];
+        }, $titlesAchievement);
+
+        Achievement::insert($achievementsData);
+
+// If you want to attach images to these achievements:
+        $achievements = Achievement::orderBy('id', 'desc')->get();
+
+        foreach ($achievements as $index => $achievement) {
+            // Path to your image, adjust as needed
+            $imagePath = storage_path('app/public/gallery' . $index + 1 . '.png');
+
+            // Attach the image to the achievement
+            $achievement->addMedia($imagePath)->preservingOriginal()
+                ->toMediaCollection('achievements-images');
+        }
 
         Cache::forget('frontpage_services');
         Cache::forget('frontpage_testimonials');

@@ -9,7 +9,8 @@
     {{-- <link rel="stylesheet" href="/css/lib/swiper-bundle.css"> --}}
     <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-
+    <script src="//unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="//unpkg.com/isotope-packery@2/packery-mode.pkgd.js"></script>
 </head>
 
 <body x-data="{
@@ -34,6 +35,12 @@
     </main>
     @include('sections.footer')
 
+    <script>
+        var pckry = new Packery( '.grid-isotope', {
+            // options
+        });
+     
+    </script>
 </body>
 
 

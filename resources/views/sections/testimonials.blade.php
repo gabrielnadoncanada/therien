@@ -16,17 +16,19 @@
     <div id="swiper-testimonials" class="w-full carousel px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 "
         x-init="carousel = new Flickity(document.querySelector('#swiper-testimonials'), {
             draggable: true,
-            wrapAround: true,
+            wrapAround: false,
             cellAlign: 'left',
             prevNextButtons: false,
             pageDots: false,
+            autoplay: false,
+            dragThreshold: 10
         });" x-data="{
             carousel: null,
         }">
 
         @foreach ($testimonials as $index => $testimonial)
             <div
-                class="mr-[30px] w-[500px]  mx-auto  flex gap-x-[32px]  py-[40px] px-[40px]  border border-primary rounded-[200px]">
+                class="mr-[30px] w-[500px]  max-w-[100%] mx-auto  flex gap-x-[32px]  py-[40px] px-[40px]  border border-primary rounded-[200px]">
                 <div class=" flex items-center gap-x-6 min-w-[111px]">
                     <img width="111" height="111" class="rounded-full bg-gray-50" src="{{ $testimonial['image'] }}"
                         alt="{{ $testimonial['title'] }}">
@@ -42,11 +44,8 @@
                             </svg>
                         @endfor
                     </div>
-                    <h3 class="text-gray-900 text-primary font-display text-[36px] leading-1">
-                        {{ $testimonial['title'] }}</h3>
-                    <p class="text-white">
-                        {{ $testimonial['content'] }}
-                    </p>
+                    <x-text as="h3" theme="h4" class="text-primary">{{ $testimonial['title'] }}</x-text>
+                    <x-text class="text-white">{{ $testimonial['content'] }}</x-text>
                 </div>
             </div>
         @endforeach

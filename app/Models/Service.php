@@ -17,6 +17,10 @@ class Service extends Model
 
     use HasFactory;
 
+    public function achievements() {
+        return $this->belongsToMany(Achievement::class);
+    }
+
 	protected static function booted()
     {
         static::updated(function ($service) {

@@ -12,7 +12,7 @@ input:-internal-autofill-selected {
 :root {
     --primary: #ABE85E;
     --secondary: #1C211B;
-    --foreground: #161A15;
+    --foreground: #161915;
     --accent: #19669b;
     /* --primary-darker: #00264d;
     --primary-dark: #003266;
@@ -57,7 +57,7 @@ textarea::placeholder {
 }
 
 
-header .nav>li:not(:last-child)>a::after {
+header .nav > li:not(:last-child) > a::after {
     content: '';
     @apply bg-primary w-[5px] rounded-[50px] h-[5px] mx-[10px];
 }
@@ -105,7 +105,7 @@ header .nav>li:not(:last-child)>a::after {
     @apply w-[8px] h-[8px] bg-primary rounded-[50px]
 }
 
-#projects+.swiper-pagination {
+#projects + .swiper-pagination {
     transform: rotate(90deg);
     transform-origin: 95% 50%;
     left: unset !important;
@@ -136,7 +136,7 @@ header .nav>li:not(:last-child)>a::after {
 #a-propos .flickity-page-dots {
 
     right: 0 !important;
-    bottom: 0 !important;
+    bottom: 60px !important;
     width: 26px !important;
     display: flex;
     flex-direction: column;
@@ -149,8 +149,6 @@ header .nav>li:not(:last-child)>a::after {
     width: 16px !important;
     height: 16px !important;
 }
-
-
 
 
 #a-propos .flickity-page-dots .dot.is-selected {
@@ -170,11 +168,11 @@ header .nav>li:not(:last-child)>a::after {
     background-color: var(--primary);
 }
 
-/*.hasFilter::after {*/
-/*    content: '';*/
-/*    @apply absolute left-0 top-0 w-full h-full;*/
-/*    background-image: linear-gradient(180deg, rgba(22, 25, 21, 0.00) 0%, #161915 61.98%);*/
-/*}*/
+.hasFilter::after {
+    content: '';
+    @apply absolute left-0 top-0 w-full h-full aspect-[35/44] z-[-1];
+    background-image: linear-gradient(180deg, rgba(22, 25, 21, 0.00) 0%, #161915 61.98%);
+}
 
 
 @media only screen and (min-width: 1548px) {
@@ -189,13 +187,13 @@ header .nav>li:not(:last-child)>a::after {
 
 
 #a-propos .flickity-viewport {
-    height: 860px !important;
+    height: 100% !important;
     border-radius: 50px;
-
+    aspect-ratio: 35/43;
 }
 
-#swiper-services .flickity-viewport{
-   height: 492px !important;
+#swiper-services .flickity-viewport {
+    height: 492px !important;
 }
 
 @media only screen and (min-width: 1548px) {
@@ -222,3 +220,21 @@ header .nav>li:not(:last-child)>a::after {
     height: 492px !important;
 
 } */
+
+
+/*#swiper-services {*/
+/*    @apply pr-6;*/
+/*}*/
+
+#swiper-projects img {
+    max-width: calc(100% - 60px);
+}
+
+@media only screen and (max-width: 1024px) {
+    #swiper-projects img {
+        max-width: calc(100% - 30px) !important;
+    }
+    #a-propos .flickity-page-dots {
+        bottom: 30px !important;
+    }
+}

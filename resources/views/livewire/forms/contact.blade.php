@@ -1,7 +1,7 @@
-<x-modal id="contact" class="bg-foreground ">
-    <img class="hidden lg:block mb-[45px]  mx-auto max-w-[180px] lg:max-w-[220px]"
-        src="{{ asset('images/logo-therien.svg') }}" alt="" width="220">
-    <div class="mb-[25px] pt-[40px] lg:mb-[50px] col-span-2 text-base flex flex-wrap justify-between leading-6 gap-4"
+<x-modal id="contact" class="bg-foreground " >
+{{--    <img class="hidden lg:block mb-[45px]  mx-auto max-w-[180px] lg:max-w-[220px]"--}}
+{{--        src="{{ asset('images/logo-therien.svg') }}" alt="" width="220">--}}
+    <div class="mb-[25px] pt-[50px] lg:mb-[40px] col-span-2 text-base flex flex-wrap justify-between leading-6 gap-8"
         id="modal-title">
         <p class="text-[16px] lg:text-[24px] text-primary leading-[1.2]">
             <b>Thérien Inc.</b><br>

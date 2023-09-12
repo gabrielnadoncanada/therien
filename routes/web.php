@@ -29,8 +29,15 @@ Route::view('/', 'home', [
     }),
 ])->name('home');
 
+
+Route::view('/gallerie', 'gallery', [
+    'services' => Cache::remember('frontpage_services', 3600, function () {
+        return app(ServiceRepository::class)->getAllSorted();
+    }),
+    'achievements' => App\Models\Achievement::class::all(),
+])->name('gallery');
+
 //Route::get('/', \App\Http\Livewire\FrontPage::class)->name('home');
-Route::get('/gallerie', \App\Http\Livewire\Gallery::class)->name('gallery');
 //Route::get('{page:slug}', \App\Http\Livewire\Page::class);
 //Route::get('/blog/{post:slug}', \App\Http\Livewire\Blog\Post::class);
 

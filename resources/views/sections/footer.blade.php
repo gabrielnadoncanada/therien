@@ -3,10 +3,10 @@
         <div
             class=" mt-20 lg:mt-60  gap-y-[32px] md:gap-x-[70px] lg:gap-x-[140px] flex-col md:flex-row bg-primary px-[50px] py-[48px] md:py-[96px] md:rounded-[200px] md:px-[75px] lg:px-[122px] rounded-[50px] lg:rounded-[500px] flex justify-between">
             <div>
-                <x-text as="h2" theme="h2" class="font-bold  text-foreground mb-2">
+                <x-text as="h2" theme="h2" class="font-bold  text-secondary mb-2">
                     Prêt pour l'aventure&nbsp;?
                 </x-text>
-                <x-text class="text-foreground">Vous n'êtes qu'à un clic du l'espace de vos rêves.</x-text>
+                <x-text class="text-secondary">Vous n'êtes qu'à un clic du l'espace de vos rêves.</x-text>
 
             </div>
             <div class="flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">

@@ -19,9 +19,9 @@ background-blend-mode: hard-light, normal;">
         <div class="text-center px-6">
             <img class="mb-6 md:mb-[20px] mx-auto max-w-[200px] 2xl:max-w-[275px]"
                 src="{{ asset('images/logo-therien.svg') }}" alt="" width="275">
-            <x-text as="h1" theme="h1" class="text-white max-w-6xl mx-auto">Transformez vos rêves
+            <x-text as="h1" theme="h1" class="max-w-6xl mx-auto">Transformez vos rêves
                 en&nbsp;espaces extraordinaires.</x-text>
-            <x-text class="mt-[1em] mb-[2em]" theme="h6">Nous sculptons des espaces uniques qui allient
+            <x-text class="mt-[1em] mb-[2em] text-white" theme="h6">Nous sculptons des espaces uniques qui allient
                 créativité, expertise et beauté naturelle.</x-text>
 
             <div class=" flex items-center justify-center gap-x-6">

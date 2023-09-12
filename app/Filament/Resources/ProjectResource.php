@@ -6,6 +6,7 @@ use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -26,10 +27,14 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(191),
-                Forms\Components\FileUpload::make('before_image')
-                    ->image(),
-                Forms\Components\FileUpload::make('after_image')
-                ->image(),
+                SpatieMediaLibraryFileUpload::make('before_image')
+                    ->collection('projects-images')
+                    ->maxFiles(5)
+                    ->disableLabel(),
+                SpatieMediaLibraryFileUpload::make('after_image')
+                    ->collection('projects-images')
+                    ->maxFiles(5)
+                    ->disableLabel(),
             ]);
     }
 
@@ -57,14 +62,14 @@ class ProjectResource extends Resource
             ])->reorderable('sort')
             ->defaultSort('sort', 'asc');
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -72,5 +77,5 @@ class ProjectResource extends Resource
             'create' => Pages\CreateProject::route('/create'),
             'edit' => Pages\EditProject::route('/{record}/edit'),
         ];
-    }    
+    }
 }

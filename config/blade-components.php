@@ -144,12 +144,14 @@ return [
         'button' => [
             'class'  => Components\Button::class,
             'themes' => [
-                'default' => 'leading-6	rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'light'   => 'leading-6 rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large'   => 'text-[24px] sm:text-[26px] md:text-[28px]  2xl:text-[36px]   leading-6 rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                'large-dark'   => 'text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] rounded-[50px] bg-foreground border border-foreground px-[30px] py-[20px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'default' => 'leading-[1] rounded-[50px] bg-primary border border-primary px-[25px] py-[20px] text-[22px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'light'   => 'leading-[1] rounded-[50px] bg-secondary border border-secondary px-[25px] py-[20px] text-[22px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'small'   => 'leading-[1] rounded-[400px] bg-primary border border-primary px-[20px] py-[10px] text-[24px] font-[400] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large'   => 'leading-[1] rounded-[400px] bg-primary border border-primary px-[1.38em] py-[0.83em] text-[24px] sm:text-[26px] md:text-[28px] 2xl:text-[36px] font-[500] font-display text-secondary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                'large-dark'   => 'leading-[1] rounded-[50px] bg-secondary border border-secondary px-[30px] py-[20px] text-[24px] sm:text-[26px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-[500] font-display text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 'ghost'   => '',
                 'outline' => [
+                    'light'   => 'btn leading-[1] rounded-[50px]  border border-white px-[20px] py-[10px] font-[400] font-display text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                     'primary' => 'leading-6 rounded-md border border-primary px-6 py-2.5 text-base font-semibold text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 ],
                 'tab'     => [
@@ -162,12 +164,12 @@ return [
         'text' => [
             'class'  => Components\Text::class,
             'themes' => [
-                'default' => 'text-[18px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] leading-[1.5] text-foreground ',
-                'invert' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.5] text-white ',
-                'h1' => 'text-[40px] sm:text-[50px] md:text-[60px]  2xl:text-[96px] leading-[1]  font-display',
-                'h2' => 'text-[40px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[64px] leading-[1]  font-display',
-                'h3' => 'text-[34px] sm:text-[36px] md:text-[40px] lg:text-[44px] xl:text-[48px] leading-[1]  font-display',
-                'h6' => 'text-[18px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-white leading-[1.3] ',
+                'p' => '',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h6' => 'h6',
             ],
             // 'themes' => [
             //     'default' => 'text-[18px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] leading-[1.5] text-foreground',

@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
-
 @section('content')
     @include('sections.hero')
     @include('sections.projects')
-
-
     @include('sections.services-banner')
     <div class="relative">
         <div

@@ -1,9 +1,12 @@
-<section id="services" class="pt-20 lg:pt-64 relative" x-init="carousel = new Flickity(document.querySelector('#swiper-services'), {
+<section
+
+    id="services" class="pt-20 lg:pt-64 relative" x-init="carousel = new Flickity(document.querySelector('#swiper-services'), {
     draggable: true,
-    wrapAround: true,
+    wrapAround: false,
     cellAlign: 'left',
     prevNextButtons: false,
     pageDots: false,
+    dragThreshold: 10
 });" x-data="{
     carousel: null,
 }">
@@ -15,7 +18,7 @@
     <div class="flex gap-x-[80px] items-end relative max-w-[1548px] mx-auto">
         <div class="hidden lg:pl-6 2xl:flex w-[275px] min-w-[275px]  flex-col gap-y-[60px]">
             <img width="215" src="{{ asset('/svg/wheelbarrow.svg') }}" alt="">
-            <x-text theme="invert">
+            <x-text class="text-white">
                 Nous avons plusieurs cordes à notre arc et toujours le service qui conviendra à vos projets.
             </x-text>
 
@@ -41,22 +44,22 @@
 
 
 
-    <div id="swiper-services" class="carousel bottom-0 w-full pl-6">
+    <div id="swiper-services" class="carousel bottom-0 w-full pl-6 ">
         @foreach ($services as $index => $service)
             <div
                 class="w-[393px] mr-[20px] h-[492px] h-full max-w-[100%] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
                 <div class="">
                     <x-text as="h3" theme="h3"
-                        class="leading-[1] font-semibold font-display text-foreground text-[48px]">
+                        class="leading-[1] font-semibold font-display text-secondary text-[48px]">
                         {{ $service['title'] }}
                     </x-text>
-                    <p class="mt-5 text-foreground">
+                    <x-text class="mt-5">
                         {{ $service['content'] }}
-                    </p>
+                    </x-text>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-[10px] flex-wrap gap-y-6">
                     <x-button theme="light" @click="toggle('contact')">Faire un devis</x-button>
-                    <x-button theme="ghost" class="underline text-foreground text-[14px]">ou appelez-nous
+                    <x-button theme="ghost" class="underline text-secondary text-[14px]">ou appelez-nous
                     </x-button>
                 </div>
             </div>
