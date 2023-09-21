@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(PartnerRepository::class);
         $this->app->bind(TestimonialRepository::class);
         $this->app->bind(ProjectRepository::class);
+        $this->app->bind(AchievementRepository::class);
     }
 
     /**

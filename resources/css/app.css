@@ -2,7 +2,7 @@
 @import './typography.css';
 
 /*import google font*/
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 input:-internal-autofill-selected {
@@ -234,7 +234,65 @@ header .nav > li:not(:last-child) > a::after {
     #swiper-projects img {
         max-width: calc(100% - 30px) !important;
     }
+
     #a-propos .flickity-page-dots {
         bottom: 30px !important;
     }
+}
+
+@media only screen and (min-width: 420px) {
+    .xxs-block {
+        display: block;
+    }
+
+    .xxs-hidden {
+        display: none;
+    }
+}
+
+
+#grid {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+}
+
+
+.grid-sizer,
+.grid-item {
+    @apply w-1/2 2xl:w-1/4 h-[400px]
+}
+
+
+.grid-item {
+    padding: 8px;
+}
+
+@media only screen and (max-width: 782px) {
+    #grid .grid-item {
+        width: 100% !important;
+    }
+}
+
+#grid .grid-item--width2,
+.grid-item--width2-height2,
+.grid-item--width2-height3 {
+    width: 50%;
+}
+
+.grid-item--width4-height3 {
+    @apply w-full
+}
+
+.grid-item--width2-height2,
+.grid-item--height2 {
+    @apply h-[400px] 2xl:h-[800px]
+}
+
+.grid-item--width2-height3,
+.grid-item--width4-height3 {
+    @apply lg:h-[800px] 2xl:h-[1200px]
+}
+
+.grid-gutter {
+    width: 0;
 }

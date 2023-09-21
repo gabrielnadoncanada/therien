@@ -1,4 +1,4 @@
-<div x-show="modals['{{ $id }}']"
+<div style="display: none;" x-show="modals['{{ $id }}']"
     class="h-full w-screen fixed flex justify-center items-center p-4 top-0 z-[999]" {{ $attributes }}>
     <div x-show="modals['{{ $id }}']" x-transition:enter="ease-out duration-300"
         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"

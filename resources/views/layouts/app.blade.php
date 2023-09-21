@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Page Title' }}</title>
     @vite('resources/css/app.css')
-    {{-- <link rel="stylesheet" href="/css/lib/swiper-bundle.css"> --}}
     <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-    <script src="//unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-    <script src="//unpkg.com/isotope-packery@2/packery-mode.pkgd.js"></script>
+    <script src="{{ asset('js/lib/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/lib/isotope-packery.js') }}"></script>
+    <script src="{{ asset('js/lib/masonry-grid.js') }}"></script>
 </head>
 
 <body x-data="{
@@ -35,12 +35,7 @@
     </main>
     @include('sections.footer')
 
-    <script>
-        var pckry = new Packery( '.grid-isotope', {
-            // options
-        });
-     
-    </script>
+    @yield('scripts')
 </body>
 
 

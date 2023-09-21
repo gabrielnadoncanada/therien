@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Form;
+use App\Repositories\AchievementRepository;
 use App\Repositories\PartnerRepository;
 use App\Repositories\ProjectRepository;
 use App\Repositories\ServiceRepository;
@@ -34,7 +35,7 @@ Route::view('/gallerie', 'gallery', [
     'services' => Cache::remember('frontpage_services', 3600, function () {
         return app(ServiceRepository::class)->getAllSorted();
     }),
-    'achievements' => App\Models\Achievement::class::all(),
+    'achievements' => app(AchievementRepository::class)->getAllSorted(),
 ])->name('gallery');
 
 //Route::get('/', \App\Http\Livewire\FrontPage::class)->name('home');

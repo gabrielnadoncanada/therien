@@ -59,8 +59,7 @@
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-[10px] flex-wrap gap-y-6">
                     <x-button theme="light" @click="toggle('contact')">Faire un devis</x-button>
-                    <x-button theme="ghost" class="underline text-secondary text-[14px]">ou appelez-nous
-                    </x-button>
+
                 </div>
             </div>
         @endforeach

@@ -49,19 +49,13 @@ class AchievementResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('service_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('media')
+                    ->label('Images')
+                    ->collection('achievements-images'),
+
+
             ])
             ->filters([
                 //
@@ -76,7 +70,8 @@ class AchievementResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-            ]);
+            ])->reorderable('sort')
+            ->defaultSort('sort', 'asc');
     }
 
     public static function getRelations(): array
