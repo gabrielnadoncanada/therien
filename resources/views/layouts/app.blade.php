@@ -13,11 +13,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
-    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-    <script src="{{ asset('js/lib/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('js/lib/isotope-packery.js') }}"></script>
-    <script src="{{ asset('js/lib/masonry-grid.js') }}"></script>
+
+
+    @yield('head')
 </head>
 
 <body x-data="{
@@ -32,19 +30,18 @@
         this.modals[id] = !this.modals[id];
     }
 }" class="bg-foreground">
-    <div class="max-w-[100%] pointer-events-none absolute w-[1062px] h-[1062px] -translate-x-1/2 -translate-y-1/2 z-[-1]"
-        style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;">
-    </div>
-    @include('sections.header')
-    <main id="main" class="overflow-hidden">
-        {{ $slot ?? '' }}
-        @yield('content')
-    </main>
-    @include('sections.footer')
+<div class="max-w-[100%] pointer-events-none absolute w-[1062px] h-[1062px] -translate-x-1/2 -translate-y-1/2 z-[-1]"
+     style="background: radial-gradient(50% 50% at 50% 50%, rgba(116, 182, 33, 0.50) 0%, rgba(116, 182, 33, 0.40) 16.67%, rgba(116, 182, 33, 0.30) 33.85%, rgba(116, 182, 33, 0.20) 51.56%, rgba(116, 182, 33, 0.10) 67.71%, rgba(116, 182, 33, 0.00) 88.54%);height: 100%;aspect-ratio: 1;opacity: .6;top: 0;">
+</div>
+@include('sections.header')
+<main id="main" class="overflow-hidden">
+    {{ $slot ?? '' }}
+    @yield('content')
+</main>
+@include('sections.footer')
 
-    @yield('scripts')
+@yield('footer')
 </body>
-
 
 
 </html>

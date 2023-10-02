@@ -44,13 +44,13 @@
 
 
 
-    <div id="swiper-services" class="carousel bottom-0 w-full pl-6 ">
+    <div id="swiper-services" class="carousel bottom-0 w-full pl-6 max-[454px]:px-6">
         @foreach ($services as $index => $service)
             <div
-                class="w-[393px] mr-[20px] h-[492px] h-full max-w-[100%] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
+                class="w-[393px] mr-[20px] h-[492px] max-w-[100%] flex flex-col items-start justify-between bg-primary p-[40px] rounded-[25px]">
                 <div class="">
                     <x-text as="h3" theme="h3"
-                        class="leading-[1] font-semibold font-display text-secondary text-[48px]">
+                        class="leading-[1] font-semibold font-display text-secondary">
                         {{ $service['title'] }}
                     </x-text>
                     <x-text class="mt-5">

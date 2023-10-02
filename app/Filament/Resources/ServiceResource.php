@@ -15,6 +15,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ServiceResource extends Resource
 {
+    protected static ?string $label = 'service';
+
+    protected static ?string $pluralLabel = 'services';
+
     protected static ?string $model = Service::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -24,17 +28,14 @@ class ServiceResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label('Titre')
                     ->required()
-                    ->maxLength(191),
-                Forms\Components\TextInput::make('slug')
-                    ->maxLength(191),
+                    ->maxLength(191)
+                    ->columnSpanFull(),
                 Forms\Components\Textarea::make('content')
+                    ->label('Contenu')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('sort')
-                    ->numeric(),
-                Forms\Components\FileUpload::make('image')
-                    ->image(),
             ]);
     }
 
@@ -43,27 +44,19 @@ class ServiceResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Titre')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Contenu')
+                    ->limit(50)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('sort')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -74,20 +67,19 @@ class ServiceResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListServices::route('/'),
-            'create' => Pages\CreateService::route('/create'),
-            'edit' => Pages\EditService::route('/{record}/edit'),
+
         ];
-    }    
+    }
 }

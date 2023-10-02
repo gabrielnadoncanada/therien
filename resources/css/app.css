@@ -296,3 +296,8 @@ header .nav > li:not(:last-child) > a::after {
 .grid-gutter {
     width: 0;
 }
+
+
+[data-filter].is-checked {
+    @apply !bg-primary !text-secondary;
+}

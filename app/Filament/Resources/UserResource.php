@@ -19,6 +19,9 @@ use Illuminate\Validation\Rules\Password;
 
 class UserResource extends Resource
 {
+    protected static ?string $label = 'utilisateur';
+
+    protected static ?string $pluralLabel = 'utilisateurs';
 
 	protected static ?string $model = User::class;
 
@@ -31,18 +34,19 @@ class UserResource extends Resource
 		return $form
 			->schema([
 				Forms\Components\TextInput::make('name')
+                    ->label('Nom')
+                    ->columnSpanFull()
 					->required()
 					->maxLength(255),
 				Forms\Components\TextInput::make('email')
+                    ->label('Courriel')
 					->email()
+                    ->columnSpanFull()
 					->required()
 					->maxLength(255),
-				Forms\Components\Select::make('roles')
-					->label('Roles')
-					->relationship('roles', 'name')
-					->multiple()->preload(),
 				Forms\Components\TextInput::make('password')
-					->label(__('Password'))
+					->label(__('Mot de passe'))
+                    ->columnSpanFull()
 					->password()
 					->rule(Password::default())
 					->autocomplete('new-password')
@@ -58,15 +62,16 @@ class UserResource extends Resource
 		return $table
 			->columns([
 				Tables\Columns\TextColumn::make('name')
+                    ->label('Nom')
 					->searchable(),
 				Tables\Columns\TextColumn::make('email')
+                    ->label('Courriel')
 					->searchable(),
 			])
 			->filters([
 				//
 			])
 			->actions([
-
 				Tables\Actions\EditAction::make(),
 				Tables\Actions\DeleteAction::make()
 					->visible(function ($record) {
@@ -94,8 +99,6 @@ class UserResource extends Resource
 	{
 		return [
 			'index' => Pages\ListUsers::route('/'),
-			'create' => Pages\CreateUser::route('/create'),
-
 		];
 	}
 }

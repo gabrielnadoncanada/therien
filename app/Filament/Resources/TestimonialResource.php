@@ -15,6 +15,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TestimonialResource extends Resource
 {
+    protected static ?string $label = 'témoignage';
+
+    protected static ?string $pluralLabel = 'témoignages';
+
     protected static ?string $model = Testimonial::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -24,15 +28,14 @@ class TestimonialResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label('Titre')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(191),
                 Forms\Components\Textarea::make('content')
+                    ->label('Contenu')
                     ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('rating')
-                    ->numeric(),
-                Forms\Components\FileUpload::make('image')
-                    ->image(),
+                    ->columnSpanFull()
             ]);
     }
 
@@ -41,17 +44,19 @@ class TestimonialResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Titre')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('rating')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Contenu')
+                    ->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -63,20 +68,18 @@ class TestimonialResource extends Resource
             ])  ->reorderable('sort')
             ->defaultSort('sort', 'asc');
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListTestimonials::route('/'),
-            'create' => Pages\CreateTestimonial::route('/create'),
-            'edit' => Pages\EditTestimonial::route('/{record}/edit'),
         ];
-    }    
+    }
 }

@@ -13,7 +13,7 @@
         </svg>
     </div>
 
-    <div id="swiper-testimonials" class="w-full carousel px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 "
+    <div id="swiper-testimonials" class="w-full carousel pl-6 max-[454px]:px-6 overflow-hidden swiper-container 2xl:absolute bottom-0 "
         x-init="carousel = new Flickity(document.querySelector('#swiper-testimonials'), {
             draggable: true,
             wrapAround: false,
@@ -28,14 +28,10 @@
 
         @foreach ($testimonials as $index => $testimonial)
             <div
-                class="mr-[30px] w-[500px]  max-w-[100%] mx-auto  flex gap-x-[32px]  py-[40px] px-[40px]  border border-primary rounded-[200px]">
-                <div class=" flex items-center gap-x-6 min-w-[111px]">
-                    <img width="111" height="111" class="rounded-full bg-gray-50" src="{{ $testimonial['image'] }}"
-                        alt="{{ $testimonial['title'] }}">
-                </div>
+                class="min-h-[210px] h-full w-[393px] mr-[20px] max-w-[100%] lg:w-[475px] rounded-[25px] mx-auto  flex gap-x-[32px]  p-[40px]   border border-primary ">
                 <div class="flex flex-col gap-y-[12px]">
                     <div class="flex gap-x-[2px] text-primary">
-                        @for ($i = 0; $i < $testimonial['rating']; $i++)
+                        @for ($i = 0; $i < 5; $i++)
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-none" viewBox="0 0 16 16"
                                 fill="currentColor" aria-hidden="true">
                                 <path

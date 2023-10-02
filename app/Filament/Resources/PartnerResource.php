@@ -16,6 +16,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PartnerResource extends Resource
 {
+    protected static ?string $label = 'partenaire';
+
+    protected static ?string $pluralLabel = 'partenaires';
+
     protected static ?string $model = Partner::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -25,16 +29,17 @@ class PartnerResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label('Titre')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(191),
-                Forms\Components\Section::make('Images')
-                    ->schema([
-                        SpatieMediaLibraryFileUpload::make('media')
-                            ->collection('partners-images')
-                            ->maxFiles(5)
-                            ->disableLabel(),
-                    ])
-                    ->collapsible(),
+
+                SpatieMediaLibraryFileUpload::make('media')
+                    ->label('Image')
+                    ->columnSpanFull()
+                    ->collection('partners-images')
+                    ->maxFiles(1)
+
             ]);
     }
 
@@ -43,13 +48,18 @@ class PartnerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Titre')
                     ->searchable(),
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('media')
+                    ->label('Image')
+                    ->collection('partners-images'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -73,8 +83,8 @@ class PartnerResource extends Resource
     {
         return [
             'index' => Pages\ListPartners::route('/'),
-            'create' => Pages\CreatePartner::route('/create'),
-            'edit' => Pages\EditPartner::route('/{record}/edit'),
+
+
         ];
     }
 }

@@ -24,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ServiceRepository::class);
         $this->app->bind(PartnerRepository::class);
         $this->app->bind(TestimonialRepository::class);
-        $this->app->bind(ProjectRepository::class);
         $this->app->bind(AchievementRepository::class);
     }
 
@@ -33,12 +32,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        FilamentSettings::setFormFields([
-            SpatieMediaLibraryFileUpload::make('logo')
-                                        ->disableLabel(),
-
-        ]);
         Schema::defaultStringLength(191);
-
     }
 }

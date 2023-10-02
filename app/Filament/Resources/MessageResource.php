@@ -18,7 +18,12 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class MessageResource extends Resource
 {
+    protected static ?string $label = 'message';
+
+    protected static ?string $pluralLabel = 'messages';
+
     protected static ?string $model = Message::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

@@ -25,8 +25,8 @@ Route::view('/', 'home', [
     'partners' => Cache::remember('frontpage_partners', 3600, function () {
         return app(PartnerRepository::class)->getAllSorted();
     }),
-    'projects' => Cache::remember('frontpage_projects', 3600, function () {
-        return app(ProjectRepository::class)->getAllSorted();
+    'achievements' => Cache::remember('frontpage_achievements', 3600, function () {
+        return app(AchievementRepository::class)->getAllFeatured();
     }),
 ])->name('home');
 

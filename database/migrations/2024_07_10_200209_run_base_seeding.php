@@ -50,52 +50,34 @@ return new class extends Migration {
 
         \App\Models\Testimonial::insert(array(
             array(
-                'title' => "Julie Nathan",
-                'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
+                'title' => "Benoit Marcotte",
+                'content' => "Merci beaucoup pour ce travail professionnel!",
+
+            ),
+            array(
+                'title' => "Marie Normandin",
+                'content' => "WoW! Bravo à toute l’équipe!",
+
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
+
+            ),
+            array(
+                'title' => "Benoit Marcotte",
+                'content' => "Merci beaucoup pour ce travail professionnel!",
+
+            ),
+            array(
+                'title' => "Marie Normandin",
+                'content' => "WoW! Bravo à toute l’équipe!",
+
             ),
             array(
                 'title' => "Julie Nathan",
                 'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
-            ),
-            array(
-                'title' => "Julie Nathan",
-                'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
-            ),
-            array(
-                'title' => "Julie Nathan",
-                'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
-            ),
-            array(
-                'title' => "Julie Nathan",
-                'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
-            ),
-            array(
-                'title' => "Julie Nathan",
-                'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
-            ),
-            array(
-                'title' => "Julie Nathan",
-                'content' => "Votre travail est tout simplement incroyable. J’adore !",
-                'rating' => 5,
-                'image' => "https://placehold.co/111x111",
+
             ),
         ),
         );
@@ -152,36 +134,17 @@ return new class extends Migration {
         }
 
 
-        $titles = ["1", "2", "3", "4", "5"];
-        $projectsData = array_map(function ($title) {
-            return ['title' => $title];
-        }, $titles);
-
-        Project::insert($projectsData);
-
-        $projects = Project::orderBy('id', 'desc')->get();
-
-        foreach ($projects as $index => $project) {
-            // Path to your image, adjust as needed
-            $imagePath1 = storage_path('app/public/project.png');
-            $imagePath2 = storage_path('app/public/project2.png');
-
-            // Attach the image to the achievement
-            $project->addMedia($imagePath1)->preservingOriginal()
-                ->toMediaCollection('projects-images');
-            $project->addMedia($imagePath2)->preservingOriginal()
-                ->toMediaCollection('projects-images');
-        }
-
-
         $titlesAchievement = ["1", "2", "3", "4", "5", "6", "7"];
         $achievementsData = array_map(function ($titlesAchievement) {
-            return ['title' => $titlesAchievement];
+            return ['title' => $titlesAchievement, 'is_featured' => false];
         }, $titlesAchievement);
+
+        $achievementsData[0]['is_featured'] = true;
+        $achievementsData[1]['is_featured'] = true;
+        $achievementsData[2]['is_featured'] = true;
 
         Achievement::insert($achievementsData);
 
-// If you want to attach images to these achievements:
         $achievements = Achievement::orderBy('id', 'desc')->get();
 
         foreach ($achievements as $index => $achievement) {
@@ -191,11 +154,20 @@ return new class extends Migration {
             // Attach the image to the achievement
             $achievement->addMedia($imagePath)->preservingOriginal()
                 ->toMediaCollection('achievements-images');
+
+            // Path to your image, adjust as needed
+            $imagePath1 = storage_path('app/public/project.png');
+            $imagePath2 = storage_path('app/public/project2.png');
+
+            $achievement->addMedia($imagePath1)->preservingOriginal()
+                ->toMediaCollection('achievements-featured-images-before');
+            $achievement->addMedia($imagePath2)->preservingOriginal()
+                ->toMediaCollection('achievements-featured-images-after');
         }
 
         Cache::forget('frontpage_services');
         Cache::forget('frontpage_testimonials');
-        Cache::forget('frontpage_projects');
+        Cache::forget('frontpage_achievements');
         Cache::forget('frontpage_partners');
     }
 

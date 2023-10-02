@@ -31,10 +31,6 @@
                 <div class="relative ">
                     <img class="hidden lg:block absolute top-[-45px] right-[-100px] z-[20]"
                          src="{{ asset('/svg/paint.svg') }}" alt="">
-
-                    <style>
-
-                    </style>
                     <div id="swiper-projects" class="carousel"
                          x-data="{ showAfter: false, carousel: null }"
                          x-init="carousel = new Flickity(document.querySelector('#swiper-projects'), {
@@ -44,19 +40,22 @@
                             prevNextButtons: false,
                             dragThreshold: 10
                         });">
-                        @foreach ($projects as $index => $project)
+
+                        @foreach ($achievements as $index => $achievement)
                             <div class="w-full h-full rounded-[50px] ">
                                 <div class="hasFilter">
                                     <img class="w-full aspect-[35/44] absolute rounded-[50px]  object-cover "
                                          width="700"
-                                         src="{{ $project->getMedia('projects-images')[0]->getUrl() }}" alt=""
+                                         src="{{ $achievement->getMedia('achievements-featured-images-before')[0]->getUrl() }}"
+                                         alt=""
                                          :class="{
                                         'z-[-1] right-0 top-[30px] lg:top-[60px]': showAfter,
                                         'z-[1] ': !showAfter
                                     }">
 
-                                    <img class="w-full aspect-[35/44] absolute rounded-[50px]  object-cover " width="700"
-                                         src="{{ $project->getMedia('projects-images')[1]->getUrl() }}" alt=""
+                                    <img class="w-full aspect-[35/44] absolute rounded-[50px]  object-cover "
+                                         width="700"
+                                         src="{{ $achievement->getMedia('achievements-featured-images-after')[0]->getUrl() }}" alt=""
                                          :class="{
                                         'top-0 ': showAfter,
                                         'z-[-1] right-0 top-[30px] lg:top-[60px]': !showAfter

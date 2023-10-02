@@ -9,7 +9,7 @@ class Text extends Component
 {
     use Themeable;
 
-    public function __construct($href = null, $theme = 'default')
+    public function __construct($href = null, $theme = 'p')
     {
         $this->theme = $theme;
     }

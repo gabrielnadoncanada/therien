@@ -152,19 +152,18 @@ return [
                 'ghost'   => '',
                 'outline' => [
                     'light'   => 'btn leading-[1] rounded-[50px]  border border-white px-[20px] py-[10px] font-[400] font-display text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
-                    'primary' => 'leading-6 rounded-md border border-primary px-6 py-2.5 text-base font-semibold text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
+                    'primary' => 'leading-6 rounded-[50px] hover:bg-primary hover:text-secondary border border-primary px-6 py-2.5 text-base font-semibold text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success',
                 ],
-                'tab'     => [
+                'tab' => [
                     'innactive' => 'saas',
                     'active'    => 'px-0 border-b-2 border-[#5377DD] rounded-none border-primary shadow-none	',
-
                 ],
             ],
         ],
         'text' => [
             'class'  => Components\Text::class,
             'themes' => [
-                'p' => '',
+                'p' => 'p',
                 'h1' => 'h1',
                 'h2' => 'h2',
                 'h3' => 'h3',

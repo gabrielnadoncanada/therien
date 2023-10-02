@@ -10,4 +10,9 @@ class AchievementRepository
     {
         return Achievement::all()->sortBy('sort');
     }
+
+    public function getAllFeatured()
+    {
+        return Achievement::where('is_featured', true)->get();
+    }
 }

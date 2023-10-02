@@ -4,7 +4,7 @@
             class="flex pr-[2.5rem] flex-row gap-10 items-center justify-start inline-block   whitespace-nowrap text-secondary text-left relative">
             @foreach ($services as $index => $service)
                 <x-text theme="h1"><a
-                        href="{{ route('gallery', ['service' => $service['title']]) }}">{{ $service['title'] }}</a></x-text>
+                        href="{{ route('gallery') }}#service=[data-category*='{{$service['id']}}']">{{ $service['title'] }}</a></x-text>
                 <span class="bg-secondary rounded-[50%] shrink-0 w-[15px] h-[15px] relative"></span>
             @endforeach
         </div>
