@@ -35,4 +35,10 @@ class Partner extends Model implements HasMedia
             Cache::forget('frontpage_partners');
         });
     }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('partners-images')
+            ->useDisk('public');
+    }
 }
