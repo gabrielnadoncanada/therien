@@ -301,3 +301,7 @@ header .nav > li:not(:last-child) > a::after {
 [data-filter].is-checked {
     @apply !bg-primary !text-secondary;
 }
+
+.carousel:not(.flickity-enabled)  {
+    @apply hidden
+}
