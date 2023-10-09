@@ -27,8 +27,7 @@ class Contact extends Component
 
         $message = Message::create($validatedData);
 
-        session()->flash('message', 'Message sent successfully.');
-
+        session()->flash('status', 'Votre message a bien été envoyé.<br> Nous avons reçu vos informations et nous vous répondrons dans les plus brefs délais.');
         return redirect()->route('home');
     }
 

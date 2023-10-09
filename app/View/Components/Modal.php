@@ -6,21 +6,21 @@ use Illuminate\View\Component;
 
 class Modal extends Component
 {
-	public $title;
+    public $title;
 
-	public $id;
+    public $id;
 
-	public $show;
+    public $show;
 
-	public function __construct($id, $show = false)
-	{
-		// $this->title = $title;
-		$this->id = $id;
+    public function __construct($id, $show = false, $title = false)
+    {
+        $this->title = $title;
+        $this->id = $id;
         $this->show = $show;
-	}
+    }
 
-	public function render()
-	{
-		return view('components.modal');
-	}
+    public function render()
+    {
+        return view('components.modal');
+    }
 }

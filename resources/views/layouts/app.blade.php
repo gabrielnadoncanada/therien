@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -12,9 +12,13 @@
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Nous créons des expériences captivantes pour vos espaces extérieurs. Chaque projet devient une toile où notre créativité audacieuse et notre expertise technique se conjuguent pour donner vie à des environnements uniques.">
+    <meta name="keywords" content="Paysagement, Therien, Thérien">
+    <meta property="og:title" content="Entreprise de paysagement et déneigement | Thérien Inc.">
+    <meta property="og:description" content="Nous créons des expériences captivantes pour vos espaces extérieurs. Chaque projet devient une toile où notre créativité audacieuse et notre expertise technique se conjuguent pour donner vie à des environnements uniques..">
+    <meta property="og:image" content="{{asset('bg-accueil.png')}}"/>
+    <meta name="author" content="Devlense">
     @vite('resources/css/app.css')
-
-
     @yield('head')
 </head>
 

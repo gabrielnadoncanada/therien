@@ -58,7 +58,7 @@
                     </x-text>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-[10px] flex-wrap gap-y-6">
-                    <x-button theme="light" @click="toggle('contact')">Faire un devis</x-button>
+                    <x-button theme="light" @click="$dispatch('modal-contact')">Faire un devis</x-button>
 
                 </div>
             </div>

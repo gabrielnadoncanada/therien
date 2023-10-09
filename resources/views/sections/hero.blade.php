@@ -1,7 +1,7 @@
 <section class="relative isolate  flex items-center min-h-full">
     <div class="absolute h-full w-full "
          style="
-background: linear-gradient(180deg, #1C211B 0%, rgba(28, 33, 27, 0.30) 100%), url('/images/362203938_717630203706652_3259959972436561142_n 2.jpg'), lightgray 0 0 / 123.676% 123.611% no-repeat;
+background: linear-gradient(180deg, #1C211B 0%, rgba(28, 33, 27, 0.30) 100%), url('/images/herobanner.jpg'), lightgray 0 0 / 123.676% 123.611% no-repeat;
 background-repeat: no-repeat;
 background-position: center bottom;
 background-size: cover;
@@ -28,7 +28,7 @@ background-blend-mode: hard-light, normal;">
             </x-text>
 
             <div class=" flex items-center justify-center gap-x-6">
-                <x-button theme="large" class="leading-[1.1]" @click="toggle('contact')">Faire un
+                <x-button theme="large" class="leading-[1.1]" @click="$dispatch('modal-contact')">Faire un
                     devis
                 </x-button>
             </div>

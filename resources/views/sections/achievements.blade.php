@@ -24,7 +24,7 @@
                             pour créer une expérience visuelle inoubliable.
                         </x-text>
                     </div>
-                    <x-button theme="large" class="mr-auto" @click="toggle('contact')">Ca m’intéresse</x-button>
+                    <x-button theme="large" class="mr-auto" @click="$dispatch('modal-contact')">Ca m’intéresse</x-button>
                 </div>
             </div>
             <div class="col-span-12 md:col-span-6 md:col-start-7">
