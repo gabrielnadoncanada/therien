@@ -42,7 +42,7 @@
             </button>
         </div>
     </nav>
-    <div class="lg:hidden" x-ref="dialog" x-show="open" aria-modal="true">
+    <div class="lg:hidden" x-ref="dialog" x-show="open" aria-modal="true" style="display: none;">
         <div class="fixed inset-0 z-[1]"></div>
         <div
             class="rounded-[35px] fixed left-[1.5rem] right-[1.5rem] z-[1]  top-[20px] overflow-y-auto bg-secondary px-[30px] pt-[80px] py-[20px] sm:ring-1 sm:ring-gray-900/10"
