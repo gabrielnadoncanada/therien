@@ -83,7 +83,8 @@ class PartnerResource extends Resource
     {
         return [
             'index' => Pages\ListPartners::route('/'),
-
+            'create' => Pages\CreatePartner::route('/create'),
+            'edit' => Pages\EditPartner::route('/{record}/edit'),
 
         ];
     }

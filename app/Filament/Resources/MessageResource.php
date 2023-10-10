@@ -31,16 +31,16 @@ class MessageResource extends Resource
         return $form->schema([
             Forms\Components\TextInput::make('firstName')
                 ->disabled()
-                ->label('First Name'),
+                ->label('Prénom'),
             Forms\Components\TextInput::make('lastName')
             ->disabled()
-            ->label('Last Name'),
+            ->label('Nom'),
             Forms\Components\TextInput::make('email')
                 ->disabled()
-                ->label('Sender Email'),
+                ->label('Courriel'),
             Forms\Components\TextInput::make('tel')
             ->disabled()
-            ->label('Sender tel'),
+            ->label('Téléphone'),
             Forms\Components\Textarea::make('message')
                 ->disabled()
                 ->label('Message'),
@@ -52,12 +52,16 @@ class MessageResource extends Resource
         return $table
         ->columns([
             Tables\Columns\TextColumn::make('firstName')
+                ->label('Prénom')
                 ->searchable(),
             Tables\Columns\TextColumn::make('lastName')
+                 ->label('Nom')
                 ->searchable(),
             Tables\Columns\TextColumn::make('email')
+                ->label('Courriel')
                 ->sortable(),
             Tables\Columns\TextColumn::make('tel')
+                 ->label('Téléphone')
                 ->searchable(),
         ])
             ->filters([

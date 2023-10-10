@@ -14,7 +14,6 @@ class Achievement extends Model implements HasMedia
 
     protected $table = 'achievements';
 
-
     protected $fillable = [
         'title',
         'sort',

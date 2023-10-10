@@ -65,7 +65,8 @@ class ServiceResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-            ]);
+            ])->reorderable('sort')
+            ->defaultSort('sort', 'asc');
     }
 
     public static function getRelations(): array
@@ -79,6 +80,8 @@ class ServiceResource extends Resource
     {
         return [
             'index' => Pages\ListServices::route('/'),
+            'create' => Pages\CreateService::route('/create'),
+            'edit' => Pages\EditService::route('/{record}/edit'),
 
         ];
     }

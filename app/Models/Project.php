@@ -20,19 +20,4 @@ class Project extends Model  implements HasMedia
 
     use HasFactory;
     use InteractsWithMedia;
-
-	protected static function booted()
-    {
-        static::updated(function ($project) {
-            Cache::forget('frontpage_projects');
-        });
-
-        static::created(function ($project) {
-            Cache::forget('frontpage_projects');
-        });
-
-        static::deleted(function ($project) {
-            Cache::forget('frontpage_projects');
-        });
-    }
 }

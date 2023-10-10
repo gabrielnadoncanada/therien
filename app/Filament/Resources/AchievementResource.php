@@ -33,6 +33,7 @@ class AchievementResource extends Resource
                     ->maxLength(191),
                 Forms\Components\Select::make('service_id')
                     ->relationship('services', 'title')
+                    ->preload()
                     ->searchable()
                     ->multiple(),
                 Forms\Components\Section::make('Image avant / après')
@@ -58,8 +59,6 @@ class AchievementResource extends Resource
                             ->disableLabel(),
                     ])
                     ->collapsible()
-
-
             ]);
     }
 
@@ -114,6 +113,8 @@ class AchievementResource extends Resource
     {
         return [
             'index' => Pages\ListAchievements::route('/'),
+            'create' => Pages\CreateAchievement::route('/create'),
+            'edit' => Pages\EditAchievement::route('/{record}/edit'),
         ];
     }
 }

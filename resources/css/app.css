@@ -303,5 +303,9 @@ header .nav > li:not(:last-child) > a::after {
 }
 
 .carousel:not(.flickity-enabled)  {
-    @apply hidden
+    @apply hidden;
+}
+
+.grid-item a + a {
+    @apply hidden;
 }
