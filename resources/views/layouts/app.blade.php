@@ -12,20 +12,28 @@
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Nous créons des expériences captivantes pour vos espaces extérieurs. Chaque projet devient une toile où notre créativité audacieuse et notre expertise technique se conjuguent pour donner vie à des environnements uniques.">
+    <meta name="description"
+          content="Nous créons des expériences captivantes pour vos espaces extérieurs. Chaque projet devient une toile où notre créativité audacieuse et notre expertise technique se conjuguent pour donner vie à des environnements uniques.">
     <meta name="keywords" content="Paysagement, Therien, Thérien">
     <meta property="og:title" content="Entreprise de paysagement et déneigement | Thérien Inc.">
-    <meta property="og:description" content="Nous créons des expériences captivantes pour vos espaces extérieurs. Chaque projet devient une toile où notre créativité audacieuse et notre expertise technique se conjuguent pour donner vie à des environnements uniques..">
+    <meta property="og:description"
+          content="Nous créons des expériences captivantes pour vos espaces extérieurs. Chaque projet devient une toile où notre créativité audacieuse et notre expertise technique se conjuguent pour donner vie à des environnements uniques..">
     <meta property="og:image" content="{{asset('bg-accueil.png')}}"/>
     <meta name="author" content="Devlense">
     @vite('resources/css/app.css')
-    @yield('head')
+    <link rel="stylesheet" href="{{ asset('js/lib/lightgallery/css/lightgallery-bundle.css') }}">
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E30YJ4XG12"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-E30YJ4XG12');
@@ -52,7 +60,12 @@
 </main>
 @include('sections.footer')
 
-@yield('footer')
+<script src="{{ asset('js/lib/isotope.pkgd.js') }}"></script>
+<script src="{{ asset('js/lib/packery-mode.pkgd.js') }}"></script>
+<script src="{{ asset('js/lib/masonry-grid.js') }}"></script>
+<script src="{{ asset('js/lib/lightgallery/lightgallery.min.js') }}"></script>
+<script src="{{ asset('js/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js') }}"></script>
+<script src="{{ asset('js/lib/lightgallery/plugins/zoom/lg-zoom.min.js') }}"></script>
 </body>
 
 

@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     var iso;
 
-    function initializeGrid() {
+    function initializeGrid(grid) {
         const gridItems = grid.querySelectorAll('.grid-item');
+        let filtersElem = document.querySelector('.filters-button-group');
+        let buttonGroups = document.querySelectorAll('[data-filter]');
+
         gridItems.forEach((item, index) => {
-            switch (index % 7) { // If the pattern repeats every 7 elements
-                case 0: // If you have a special class for index 0, you can add here.
+            switch (index % 7) {
+                case 0:
                     break;
                 case 1:
                     item.classList.add('grid-item--height2');
@@ -21,11 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     item.classList.add('grid-item--width4-height3');
                     break;
                 default:
-                    // For indices that do not need special classes
                     break;
             }
         });
-
 
         iso = new Isotope(grid, {
             itemSelector: '.grid-item',
@@ -34,61 +35,40 @@ document.addEventListener("DOMContentLoaded", function () {
             percentPosition: true,
             layoutMode: 'packery'
         });
+
+        filtersElem.addEventListener('click', function (event) {
+            if (!matchesSelector(event.target, 'button')) {
+                return;
+            }
+            let filterValue = event.target.getAttribute('data-filter');
+
+            location.hash = 'service=' + encodeURIComponent(filterValue);
+        });
+
+        window.addEventListener('hashchange', function () {
+            let hashFilter = function () {
+                var hash = location.hash;
+                var matches = location.hash.match(/service=([^&]+)/i);
+                var hashFilter = matches && matches[1];
+                return hashFilter && decodeURIComponent(hashFilter);
+            };
+            if (!hashFilter) {
+                return;
+            }
+            iso.arrange({filter: hashFilter});
+            for (let i = 0, len = buttonGroups.length; i < len; i++) {
+                let buttonGroup = buttonGroups[i];
+                buttonGroup.classList.remove('is-checked');
+
+                document.querySelector('[data-filter="' + hashFilter + '"]').classList.add('is-checked');
+            }
+        });
     }
 
-    function getHashFilter() {
-        var hash = location.hash;
-
-        var matches = location.hash.match(/service=([^&]+)/i);
-        var hashFilter = matches && matches[1];
-
-
-
-
-        return hashFilter && decodeURIComponent(hashFilter);
+    let grid = document.getElementById('grid');
+    if (grid) {
+        initializeGrid(grid);
     }
-
-    function onHashchange() {
-        var hashFilter = getHashFilter();
-
-
-        console.log(hashFilter);
-
-        if (!hashFilter) {
-            return;
-        }
-
-        iso.arrange({filter: hashFilter});
-
-        for (let i = 0, len = buttonGroups.length; i < len; i++) {
-            let buttonGroup = buttonGroups[i];
-            buttonGroup.classList.remove('is-checked');
-
-            document.querySelector('[data-filter="' + hashFilter + '"]').classList.add('is-checked');
-        }
-    }
-
-    var grid = document.getElementById('grid');
-    var buttonGroups = document.querySelectorAll('[data-filter]');
-
-    initializeGrid();
-    onHashchange();
-
-
-    var filtersElem = document.querySelector('.filters-button-group');
-
-    filtersElem.addEventListener('click', function (event) {
-        if (!matchesSelector(event.target, 'button')) {
-            return;
-        }
-        var filterValue = event.target.getAttribute('data-filter');
-
-        location.hash = 'service=' + encodeURIComponent(filterValue);
-    });
-
-
-    window.addEventListener('hashchange', onHashchange);
-
 });
 
 
