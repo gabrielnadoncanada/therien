@@ -14,7 +14,7 @@
 
             <ul class="flex flex-wrap items-center justify-center gap-[25px] px-6 filters-button-group">
                 <li>
-                    <x-button theme="outline.primary" class="is-checked " data-service="0" data-filter="*">Tous</x-button>
+                    <x-button theme="outline.primary" class="is-checked " data-service="0" data-filter="[data-category*='0']">Tous</x-button>
                 </li>
                 @foreach($services as $key => $service)
                     <li>
@@ -46,4 +46,7 @@
             </div>
         @endforeach
     </div>
+
+
+
 </section>

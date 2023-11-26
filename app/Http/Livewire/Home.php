@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Repositories\AchievementRepository;
+use App\Repositories\BeforeAfterRepository;
 use App\Repositories\PartnerRepository;
 use App\Repositories\ServiceRepository;
 use App\Repositories\TestimonialRepository;
@@ -16,7 +17,7 @@ class Home extends Component
                 'services' => app(ServiceRepository::class)->getAllSorted(),
                 'testimonials' => app(TestimonialRepository::class)->getAllSorted(),
                 'partners' => app(PartnerRepository::class)->getAllSorted(),
-                'achievements' => app(AchievementRepository::class)->getAllFeatured()
+                'beforeAfters' => app(BeforeAfterRepository::class)->getAllSorted()
             ]
         )->layout('layouts.app');
     }

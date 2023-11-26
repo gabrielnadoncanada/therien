@@ -41,7 +41,7 @@
                             dragThreshold: 10
                         });">
 
-                        @foreach ($achievements as $index => $achievement)
+                        @foreach ($beforeAfters as $index => $achievement)
                             <div class="w-full h-full rounded-[50px] ">
                                 <div class="hasFilter">
                                     <img class="w-full aspect-[35/44] absolute rounded-[50px]  object-cover "

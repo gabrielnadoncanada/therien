@@ -66,6 +66,14 @@
 <script src="{{ asset('js/lib/lightgallery/lightgallery.min.js') }}"></script>
 <script src="{{ asset('js/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js') }}"></script>
 <script src="{{ asset('js/lib/lightgallery/plugins/zoom/lg-zoom.min.js') }}"></script>
+<script>
+    lightGallery(document.getElementById('grid'), {
+        plugins: [lgZoom, lgThumbnail],
+        selector: '.grid-item a',
+        thumbnail: true,
+        animateThumb: false
+    });
+</script>
 </body>
 
 

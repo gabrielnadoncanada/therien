@@ -28,28 +28,11 @@ class AchievementResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(191),
                 Forms\Components\Select::make('service_id')
                     ->relationship('services', 'title')
                     ->preload()
                     ->searchable()
                     ->multiple(),
-                Forms\Components\Section::make('Image avant / après')
-                    ->schema([
-                        Forms\Components\Toggle::make('is_featured')
-                            ->label('Afficher sur la page d\'accueil'),
-                        SpatieMediaLibraryFileUpload::make('before_image')
-                            ->label('Image avant')
-                            ->collection('achievements-featured-images-before')
-                            ->maxFiles(1),
-                        SpatieMediaLibraryFileUpload::make('after_image')
-                            ->label('Image après')
-                            ->collection('achievements-featured-images-after')
-                            ->maxFiles(1)
-                    ])
-                    ->collapsible(),
                 Forms\Components\Section::make('Gallerie d\'images')
                     ->schema([
                         SpatieMediaLibraryFileUpload::make('media')
@@ -73,13 +56,6 @@ class AchievementResource extends Resource
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('media')
                     ->label('Gallerie d\'images')
                     ->collection('achievements-images'),
-
-                Tables\Columns\SpatieMediaLibraryImageColumn::make('before_image')
-                    ->label('Image avant')
-                    ->collection('achievements-featured-images-before'),
-                Tables\Columns\SpatieMediaLibraryImageColumn::make('after_image')
-                    ->label('Image après')
-                    ->collection('achievements-featured-images-after'),
                 Tables\Columns\ToggleColumn::make('is_featured')
                     ->label('Afficher sur la page d\'accueil')
                     ->searchable(),

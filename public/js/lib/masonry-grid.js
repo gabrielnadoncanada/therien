@@ -55,12 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!hashFilter) {
                 return;
             }
-            iso.arrange({filter: hashFilter});
+            iso.arrange({filter: hashFilter()});
             for (let i = 0, len = buttonGroups.length; i < len; i++) {
                 let buttonGroup = buttonGroups[i];
                 buttonGroup.classList.remove('is-checked');
 
-                document.querySelector('[data-filter="' + hashFilter + '"]').classList.add('is-checked');
+                document.querySelector('[data-filter="' + hashFilter() + '"]').classList.add('is-checked');
             }
         });
     }
